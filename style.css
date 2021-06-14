@@ -24,15 +24,10 @@ strong {
 }
 
 #logo {
-  width: 200px;
-  height: 60px;
-  background-image: url(images/logo.png);
-  background-repeat: no-repeat;
-  margin-bottom: 20px;
-  margin-top: 30px;
+  font-family: 'Audiowide', sans-serif;
+  font-size: 50px;
   margin-left: -70px;
-  
-  
+  color: #ccc;
 }
 
 /* body links  */
