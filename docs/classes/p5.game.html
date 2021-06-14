@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>p5.play - p5.play</title>
+    <title>p5.game - p5.game</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -15,8 +15,8 @@
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
-	    <img alt="p5.play" src="../../asterisk.png" style="max-height: 65%;" title="p5.play">
-            p5.play
+	    <img alt="p5.game" src="../../asterisk.png" style="max-height: 65%;" title="p5.game">
+            p5.game
         </h1>
 	<div class="nav">
             <li class="divider-vertical"></li>
@@ -27,7 +27,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Animation", "classes/Camera", "classes/Group", "classes/p5.play", "classes/Sprite", "classes/SpriteSheet", "modules/p5.play"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Animation", "classes/Camera", "classes/Group", "classes/p5.game", "classes/Sprite", "classes/SpriteSheet", "modules/p5.game"]'>
         </form>
     </div>
 </div>
@@ -41,7 +41,7 @@
                 <li><a href="../classes/Animation.html">Animation</a></li>
                 <li><a href="../classes/Camera.html">Camera</a></li>
                 <li><a href="../classes/Group.html">Group</a></li>
-                <li><a href="../classes/p5.play.html">p5.play</a></li>
+                <li><a href="../classes/p5.game.html">p5.game</a></li>
                 <li><a href="../classes/Sprite.html">Sprite</a></li>
                 <li><a href="../classes/SpriteSheet.html">SpriteSheet</a></li>
         </ul>
@@ -77,14 +77,14 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>p5.play</h1>
+    <h1>p5.game</h1>
 </div>
 
 
 
 	<div class="well well-small">
-            Module: <a href="../modules/p5.play.html">p5.play</a><br>
-            Parent Module: <a href="../modules/p5.play.html">p5.play</a>
+            Module: <a href="../modules/p5.game.html">p5.game</a><br>
+            Parent Module: <a href="../modules/p5.game.html">p5.game</a>
     </div>
 
 
@@ -102,6 +102,7 @@
 				<li class="private"><a href="#method-_isMouseButtonInState"><span class="im">_isMouseButtonInState</span>(<span class="ia">buttonCode</span><span class="ia">state</span>)</a></li>
 				<li class="private"><a href="#method-_keyCodeFromAlias"><span class="im">_keyCodeFromAlias</span>(<span class="ia">alias</span>)</a></li>
 				<li class=""><a href="#method-animation"><span class="im">animation</span>(<span class="ia">anim</span><span class="ia">x</span><span class="ia">y</span>)</a></li>
+				<li class=""><a href="#method-createGroup"><span class="im">createGroup</span>()</a></li>
 				<li class=""><a href="#method-createSprite"><span class="im">createSprite</span>(<span class="ia">x</span><span class="ia">y</span><span class="ia">width</span><span class="ia">height</span>)</a></li>
 				<li class=""><a href="#method-drawSprite"><span class="im">drawSprite</span>(<span class="ia">sprite</span>)</a></li>
 				<li class=""><a href="#method-drawSprites"><span class="im">drawSprites</span>(<span class="ia">group</span>)</a></li>
@@ -169,7 +170,7 @@
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l372"><code>lib&#x2F;p5.play.js:372</code></a>
+		<a href="../files/lib_p5.game.js.html#l394"><code>lib&#x2F;p5.game.js:394</code></a>
 		</p>
 
 
@@ -245,7 +246,7 @@ to call keyDown or other methods directly.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l457"><code>lib&#x2F;p5.play.js:457</code></a>
+		<a href="../files/lib_p5.game.js.html#l479"><code>lib&#x2F;p5.game.js:479</code></a>
 		</p>
 
 
@@ -317,7 +318,7 @@ preferable to call mouseWentUp, etc, directly.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l603"><code>lib&#x2F;p5.play.js:603</code></a>
+		<a href="../files/lib_p5.game.js.html#l625"><code>lib&#x2F;p5.game.js:625</code></a>
 		</p>
 
 
@@ -388,7 +389,7 @@ if no key code matching the given alias is found.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l307"><code>lib&#x2F;p5.play.js:307</code></a>
+		<a href="../files/lib_p5.game.js.html#l329"><code>lib&#x2F;p5.game.js:329</code></a>
 		</p>
 
 
@@ -434,6 +435,42 @@ if no key code matching the given alias is found.</p>
 
 
 </div>
+<div id="method-createGroup" class="method item ">
+	<div class="method-signature">
+	<span class="name"><code>createGroup</code></span>
+
+		<span class="paren">()</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/lib_p5.game.js.html#l188"><code>lib&#x2F;p5.game.js:188</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>In p5.game groups are collections of sprites with similar behavior.
+For example a group may contain all the sprites in the background
+or all the sprites that "kill" the player.</p>
+<p>Groups are "extended" arrays and inherit all their properties
+e.g. group.length</p>
+<p>Since groups contain only references, a sprite can be in multiple
+groups and deleting a group doesn't affect the sprites themselves.</p>
+<p>Sprite.remove() will also remove the sprite from all the groups
+it belongs to.</p>
+</div>
+
+
+
+</div>
 <div id="method-createSprite" class="method item ">
 	<div class="method-signature">
 	<span class="name"><code>createSprite</code></span>
@@ -467,14 +504,14 @@ if no key code matching the given alias is found.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l158"><code>lib&#x2F;p5.play.js:158</code></a>
+		<a href="../files/lib_p5.game.js.html#l158"><code>lib&#x2F;p5.game.js:158</code></a>
 		</p>
 
 
 
 	</div>
 
-	<div class="description"><p>A Sprite is the main building block of p5.play:
+	<div class="description"><p>A Sprite is the main building block of p5.game:
 an element able to store images or animations with a set of
 properties such as position and visibility.
 A Sprite can have a collider that defines the active area to detect
@@ -561,7 +598,7 @@ collider until an image or new collider are set</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l274"><code>lib&#x2F;p5.play.js:274</code></a>
+		<a href="../files/lib_p5.game.js.html#l296"><code>lib&#x2F;p5.game.js:296</code></a>
 		</p>
 
 
@@ -611,7 +648,7 @@ To be typically used in the main draw function.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l253"><code>lib&#x2F;p5.play.js:253</code></a>
+		<a href="../files/lib_p5.game.js.html#l275"><code>lib&#x2F;p5.game.js:275</code></a>
 		</p>
 
 
@@ -661,7 +698,7 @@ The drawing order is determined by the Sprite property "depth"</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l222"><code>lib&#x2F;p5.play.js:222</code></a>
+		<a href="../files/lib_p5.game.js.html#l244"><code>lib&#x2F;p5.game.js:244</code></a>
 		</p>
 
 
@@ -707,7 +744,7 @@ The drawing order is determined by the Sprite property "depth"</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l360"><code>lib&#x2F;p5.play.js:360</code></a>
+		<a href="../files/lib_p5.game.js.html#l382"><code>lib&#x2F;p5.game.js:382</code></a>
 		</p>
 
 
@@ -769,7 +806,7 @@ Like p5 keyIsDown but accepts strings and codes</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l333"><code>lib&#x2F;p5.play.js:333</code></a>
+		<a href="../files/lib_p5.game.js.html#l355"><code>lib&#x2F;p5.game.js:355</code></a>
 		</p>
 
 
@@ -832,7 +869,7 @@ Example: Super Mario jumping.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l347"><code>lib&#x2F;p5.play.js:347</code></a>
+		<a href="../files/lib_p5.game.js.html#l369"><code>lib&#x2F;p5.game.js:369</code></a>
 		</p>
 
 
@@ -892,7 +929,7 @@ Example: Spaceship shooting.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l286"><code>lib&#x2F;p5.play.js:286</code></a>
+		<a href="../files/lib_p5.game.js.html#l308"><code>lib&#x2F;p5.game.js:308</code></a>
 		</p>
 
 
@@ -936,7 +973,7 @@ To be typically used in the preload() function of the sketch.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l297"><code>lib&#x2F;p5.play.js:297</code></a>
+		<a href="../files/lib_p5.game.js.html#l319"><code>lib&#x2F;p5.game.js:319</code></a>
 		</p>
 
 
@@ -974,7 +1011,7 @@ To be typically used in the preload() function of the sketch.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l408"><code>lib&#x2F;p5.play.js:408</code></a>
+		<a href="../files/lib_p5.game.js.html#l430"><code>lib&#x2F;p5.game.js:430</code></a>
 		</p>
 
 
@@ -1037,7 +1074,7 @@ Combines mouseIsPressed and mouseButton of p5</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l420"><code>lib&#x2F;p5.play.js:420</code></a>
+		<a href="../files/lib_p5.game.js.html#l442"><code>lib&#x2F;p5.game.js:442</code></a>
 		</p>
 
 
@@ -1100,7 +1137,7 @@ Combines mouseIsPressed and mouseButton of p5</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l445"><code>lib&#x2F;p5.play.js:445</code></a>
+		<a href="../files/lib_p5.game.js.html#l467"><code>lib&#x2F;p5.game.js:467</code></a>
 		</p>
 
 
@@ -1163,7 +1200,7 @@ It can be used to trigger events once, to be checked in the draw cycle</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l432"><code>lib&#x2F;p5.play.js:432</code></a>
+		<a href="../files/lib_p5.game.js.html#l454"><code>lib&#x2F;p5.game.js:454</code></a>
 		</p>
 
 
@@ -1223,7 +1260,7 @@ It can be used to trigger events once, to be checked in the draw cycle</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l187"><code>lib&#x2F;p5.play.js:187</code></a>
+		<a href="../files/lib_p5.game.js.html#l209"><code>lib&#x2F;p5.game.js:209</code></a>
 		</p>
 
 
@@ -1274,7 +1311,7 @@ Equivalent to Sprite.remove()</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l199"><code>lib&#x2F;p5.play.js:199</code></a>
+		<a href="../files/lib_p5.game.js.html#l221"><code>lib&#x2F;p5.game.js:221</code></a>
 		</p>
 
 
@@ -1326,7 +1363,7 @@ Note: it does not render the sprites.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l670"><code>lib&#x2F;p5.play.js:670</code></a>
+		<a href="../files/lib_p5.game.js.html#l692"><code>lib&#x2F;p5.game.js:692</code></a>
 		</p>
 
 
@@ -1337,7 +1374,7 @@ Note: it does not render the sprites.</p>
 A quadtree is a data structure used to optimize collision detection.
 It can improve performance when there is a large number of Sprites to be
 checked continuously for overlapping.</p>
-<p>p5.play will create and update a quadtree automatically.</p>
+<p>p5.game will create and update a quadtree automatically.</p>
 </div>
 
 		<div class="params">
@@ -1376,7 +1413,7 @@ checked continuously for overlapping.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l145"><code>lib&#x2F;p5.play.js:145</code></a>
+        <a href="../files/lib_p5.game.js.html#l145"><code>lib&#x2F;p5.game.js:145</code></a>
         </p>
 
 
@@ -1401,7 +1438,7 @@ checked continuously for overlapping.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l42"><code>lib&#x2F;p5.play.js:42</code></a>
+        <a href="../files/lib_p5.game.js.html#l42"><code>lib&#x2F;p5.game.js:42</code></a>
         </p>
 
 
@@ -1433,7 +1470,7 @@ cycle, for example to draw interface elements in an absolute position.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l487"><code>lib&#x2F;p5.play.js:487</code></a>
+        <a href="../files/lib_p5.game.js.html#l509"><code>lib&#x2F;p5.game.js:509</code></a>
         </p>
 
 
@@ -1460,7 +1497,7 @@ Key.tab = 9</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l590"><code>lib&#x2F;p5.play.js:590</code></a>
+        <a href="../files/lib_p5.game.js.html#l612"><code>lib&#x2F;p5.game.js:612</code></a>
         </p>
 
 

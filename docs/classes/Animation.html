@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Animation - p5.play</title>
+    <title>Animation - p5.game</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -15,8 +15,8 @@
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
-	    <img alt="p5.play" src="../../asterisk.png" style="max-height: 65%;" title="p5.play">
-            p5.play
+	    <img alt="p5.game" src="../../asterisk.png" style="max-height: 65%;" title="p5.game">
+            p5.game
         </h1>
 	<div class="nav">
             <li class="divider-vertical"></li>
@@ -27,7 +27,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Animation", "classes/Camera", "classes/Group", "classes/p5.play", "classes/Sprite", "classes/SpriteSheet", "modules/p5.play"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Animation", "classes/Camera", "classes/Group", "classes/p5.game", "classes/Sprite", "classes/SpriteSheet", "modules/p5.game"]'>
         </form>
     </div>
 </div>
@@ -41,7 +41,7 @@
                 <li><a href="../classes/Animation.html">Animation</a></li>
                 <li><a href="../classes/Camera.html">Camera</a></li>
                 <li><a href="../classes/Group.html">Group</a></li>
-                <li><a href="../classes/p5.play.html">p5.play</a></li>
+                <li><a href="../classes/p5.game.html">p5.game</a></li>
                 <li><a href="../classes/Sprite.html">Sprite</a></li>
                 <li><a href="../classes/SpriteSheet.html">SpriteSheet</a></li>
         </ul>
@@ -83,8 +83,8 @@
 
 
 	<div class="well well-small">
-            Module: <a href="../modules/p5.play.html">p5.play</a><br>
-            Parent Module: <a href="../modules/p5.play.html">p5.play</a>
+            Module: <a href="../modules/p5.game.html">p5.game</a><br>
+            Parent Module: <a href="../modules/p5.game.html">p5.game</a>
     </div>
 
 
@@ -99,7 +99,7 @@ and Sprite.changeAnimation, however an animation can be used independently.</p>
 <p>An animation can be created either by passing a series of file names,
 no matter how many or by passing the first and the last file name
 of a numbered sequence.
-p5.play will try to detect the sequence pattern.</p>
+p5.game will try to detect the sequence pattern.</p>
 <p>For example if the given filenames are
 "data/file0001.png" and "data/file0005.png" the images
 "data/file0003.png" and "data/file0004.png" will be loaded as well.</p>
@@ -124,6 +124,7 @@ p5.play will try to detect the sequence pattern.</p>
 				<li class=""><a href="#method-getLastFrame"><span class="im">getLastFrame</span>()</a></li>
 				<li class=""><a href="#method-getWidth"><span class="im">getWidth</span>()</a></li>
 				<li class=""><a href="#method-goToFrame"><span class="im">goToFrame</span>(<span class="ia">toFrame</span>)</a></li>
+				<li class=""><a href="#method-isLastFrame"><span class="im">isLastFrame</span>()</a></li>
 				<li class=""><a href="#method-nextFrame"><span class="im">nextFrame</span>()</a></li>
 				<li class=""><a href="#method-play"><span class="im">play</span>()</a></li>
 				<li class=""><a href="#method-previousFrame"><span class="im">previousFrame</span>()</a></li>
@@ -139,7 +140,9 @@ p5.play will try to detect the sequence pattern.</p>
 				<li class=""><a href="#prop-frameDelay"><span class="ip">frameDelay</span></a></li>
 				<li class=""><a href="#prop-images"><span class="ip">images</span></a></li>
 				<li class=""><a href="#prop-looping"><span class="ip">looping</span></a></li>
+				<li class=""><a href="#prop-onComplete"><span class="ip">onComplete</span></a></li>
 				<li class=""><a href="#prop-playing"><span class="ip">playing</span></a></li>
+				<li class=""><a href="#prop-sprite"><span class="ip">sprite</span></a></li>
 				<li class=""><a href="#prop-visible"><span class="ip">visible</span></a></li>
 			</ul>
 		</li>
@@ -180,7 +183,7 @@ p5.play will try to detect the sequence pattern.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l3273"><code>lib&#x2F;p5.play.js:3273</code></a>
+		<a href="../files/lib_p5.game.js.html#l3545"><code>lib&#x2F;p5.game.js:3545</code></a>
 		</p>
 
 
@@ -277,7 +280,7 @@ function draw() {
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l3661"><code>lib&#x2F;p5.play.js:3661</code></a>
+		<a href="../files/lib_p5.game.js.html#l3971"><code>lib&#x2F;p5.game.js:3971</code></a>
 		</p>
 
 
@@ -323,7 +326,7 @@ function draw() {
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l3505"><code>lib&#x2F;p5.play.js:3505</code></a>
+		<a href="../files/lib_p5.game.js.html#l3788"><code>lib&#x2F;p5.game.js:3788</code></a>
 		</p>
 
 
@@ -373,7 +376,7 @@ using the same animation you need to clone it.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l3530"><code>lib&#x2F;p5.play.js:3530</code></a>
+		<a href="../files/lib_p5.game.js.html#l3814"><code>lib&#x2F;p5.game.js:3814</code></a>
 		</p>
 
 
@@ -439,7 +442,7 @@ Updates the frames automatically.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l3729"><code>lib&#x2F;p5.play.js:3729</code></a>
+		<a href="../files/lib_p5.game.js.html#l4039"><code>lib&#x2F;p5.game.js:4039</code></a>
 		</p>
 
 
@@ -479,7 +482,7 @@ Updates the frames automatically.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l3749"><code>lib&#x2F;p5.play.js:3749</code></a>
+		<a href="../files/lib_p5.game.js.html#l4069"><code>lib&#x2F;p5.game.js:4069</code></a>
 		</p>
 
 
@@ -519,7 +522,7 @@ Updates the frames automatically.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l3788"><code>lib&#x2F;p5.play.js:3788</code></a>
+		<a href="../files/lib_p5.game.js.html#l4108"><code>lib&#x2F;p5.game.js:4108</code></a>
 		</p>
 
 
@@ -566,7 +569,7 @@ If there is no image loaded, returns 1.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l3759"><code>lib&#x2F;p5.play.js:3759</code></a>
+		<a href="../files/lib_p5.game.js.html#l4079"><code>lib&#x2F;p5.game.js:4079</code></a>
 		</p>
 
 
@@ -621,7 +624,7 @@ If there is no image loaded, returns 1.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l3739"><code>lib&#x2F;p5.play.js:3739</code></a>
+		<a href="../files/lib_p5.game.js.html#l4049"><code>lib&#x2F;p5.game.js:4049</code></a>
 		</p>
 
 
@@ -661,7 +664,7 @@ If there is no image loaded, returns 1.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l3770"><code>lib&#x2F;p5.play.js:3770</code></a>
+		<a href="../files/lib_p5.game.js.html#l4090"><code>lib&#x2F;p5.game.js:4090</code></a>
 		</p>
 
 
@@ -705,7 +708,7 @@ If there is no image loaded, returns 1.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l3709"><code>lib&#x2F;p5.play.js:3709</code></a>
+		<a href="../files/lib_p5.game.js.html#l4019"><code>lib&#x2F;p5.game.js:4019</code></a>
 		</p>
 
 
@@ -733,6 +736,46 @@ If there is no image loaded, returns 1.</p>
 
 
 </div>
+<div id="method-isLastFrame" class="method item ">
+	<div class="method-signature">
+	<span class="name"><code>isLastFrame</code></span>
+
+		<span class="paren">()</span>
+		<span class="returns-inline">
+			<span class="type">Boolean</span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/lib_p5.game.js.html#l4059"><code>lib&#x2F;p5.game.js:4059</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Returns <code>true</code> if the current frame is the last frame in the animation.</p>
+</div>
+
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type">Boolean</span>:
+					<p><code>true</code> if the current frame is the last frame</p>
+
+			</div>
+		</div>
+
+</div>
 <div id="method-nextFrame" class="method item ">
 	<div class="method-signature">
 	<span class="name"><code>nextFrame</code></span>
@@ -748,7 +791,7 @@ If there is no image loaded, returns 1.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l3677"><code>lib&#x2F;p5.play.js:3677</code></a>
+		<a href="../files/lib_p5.game.js.html#l3987"><code>lib&#x2F;p5.game.js:3987</code></a>
 		</p>
 
 
@@ -776,7 +819,7 @@ If there is no image loaded, returns 1.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l3633"><code>lib&#x2F;p5.play.js:3633</code></a>
+		<a href="../files/lib_p5.game.js.html#l3925"><code>lib&#x2F;p5.game.js:3925</code></a>
 		</p>
 
 
@@ -804,7 +847,7 @@ If there is no image loaded, returns 1.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l3693"><code>lib&#x2F;p5.play.js:3693</code></a>
+		<a href="../files/lib_p5.game.js.html#l4003"><code>lib&#x2F;p5.game.js:4003</code></a>
 		</p>
 
 
@@ -832,7 +875,7 @@ If there is no image loaded, returns 1.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l3652"><code>lib&#x2F;p5.play.js:3652</code></a>
+		<a href="../files/lib_p5.game.js.html#l3944"><code>lib&#x2F;p5.game.js:3944</code></a>
 		</p>
 
 
@@ -860,7 +903,7 @@ If there is no image loaded, returns 1.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l3643"><code>lib&#x2F;p5.play.js:3643</code></a>
+		<a href="../files/lib_p5.game.js.html#l3935"><code>lib&#x2F;p5.game.js:3935</code></a>
 		</p>
 
 
@@ -891,7 +934,7 @@ If there is no image loaded, returns 1.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l3376"><code>lib&#x2F;p5.play.js:3376</code></a>
+        <a href="../files/lib_p5.game.js.html#l3659"><code>lib&#x2F;p5.game.js:3659</code></a>
         </p>
 
 
@@ -916,7 +959,7 @@ If there is no image loaded, returns 1.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l3338"><code>lib&#x2F;p5.play.js:3338</code></a>
+        <a href="../files/lib_p5.game.js.html#l3621"><code>lib&#x2F;p5.game.js:3621</code></a>
         </p>
 
 
@@ -944,7 +987,7 @@ sketch framerate divided by 4 (60fps = 15fps)</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l3323"><code>lib&#x2F;p5.play.js:3323</code></a>
+        <a href="../files/lib_p5.game.js.html#l3595"><code>lib&#x2F;p5.game.js:3595</code></a>
         </p>
 
 
@@ -969,7 +1012,7 @@ sketch framerate divided by 4 (60fps = 15fps)</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l3367"><code>lib&#x2F;p5.play.js:3367</code></a>
+        <a href="../files/lib_p5.game.js.html#l3650"><code>lib&#x2F;p5.game.js:3650</code></a>
         </p>
 
 
@@ -984,6 +1027,33 @@ sketch framerate divided by 4 (60fps = 15fps)</p>
 
 
 </div>
+<div id="prop-onComplete" class="property item ">
+    <h3 class="name"><code>onComplete</code></h3>
+    <span class="type">AnimationCompleteCallback</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_p5.game.js.html#l3959"><code>lib&#x2F;p5.game.js:3959</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>A reference to a function that will be executed when the animation complets.
+This function may accept an <code>animation</code> parameter, containing the animation
+that was completed. If the animation was attached to a sprite, you can access</p>
+
+    </div>
+
+
+
+</div>
 <div id="prop-playing" class="property item ">
     <h3 class="name"><code>playing</code></h3>
     <span class="type">Boolean</span>
@@ -995,7 +1065,7 @@ sketch framerate divided by 4 (60fps = 15fps)</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l3349"><code>lib&#x2F;p5.play.js:3349</code></a>
+        <a href="../files/lib_p5.game.js.html#l3632"><code>lib&#x2F;p5.game.js:3632</code></a>
         </p>
 
 
@@ -1010,6 +1080,32 @@ sketch framerate divided by 4 (60fps = 15fps)</p>
 
 
 </div>
+<div id="prop-sprite" class="property item ">
+    <h3 class="name"><code>sprite</code></h3>
+    <span class="type"><a href="../classes/Sprite.html" class="crosslink">Sprite</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_p5.game.js.html#l3612"><code>lib&#x2F;p5.game.js:3612</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The sprite this animation was added to, if any.</p>
+
+    </div>
+
+        <p><strong>Default:</strong> null</p>
+
+
+</div>
 <div id="prop-visible" class="property item ">
     <h3 class="name"><code>visible</code></h3>
     <span class="type">Boolean</span>
@@ -1021,7 +1117,7 @@ sketch framerate divided by 4 (60fps = 15fps)</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l3358"><code>lib&#x2F;p5.play.js:3358</code></a>
+        <a href="../files/lib_p5.game.js.html#l3641"><code>lib&#x2F;p5.game.js:3641</code></a>
         </p>
 
 

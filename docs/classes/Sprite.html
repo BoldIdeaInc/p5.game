@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Sprite - p5.play</title>
+    <title>Sprite - p5.game</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -15,8 +15,8 @@
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
-	    <img alt="p5.play" src="../../asterisk.png" style="max-height: 65%;" title="p5.play">
-            p5.play
+	    <img alt="p5.game" src="../../asterisk.png" style="max-height: 65%;" title="p5.game">
+            p5.game
         </h1>
 	<div class="nav">
             <li class="divider-vertical"></li>
@@ -27,7 +27,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Animation", "classes/Camera", "classes/Group", "classes/p5.play", "classes/Sprite", "classes/SpriteSheet", "modules/p5.play"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Animation", "classes/Camera", "classes/Group", "classes/p5.game", "classes/Sprite", "classes/SpriteSheet", "modules/p5.game"]'>
         </form>
     </div>
 </div>
@@ -41,7 +41,7 @@
                 <li><a href="../classes/Animation.html">Animation</a></li>
                 <li><a href="../classes/Camera.html">Camera</a></li>
                 <li><a href="../classes/Group.html">Group</a></li>
-                <li><a href="../classes/p5.play.html">p5.play</a></li>
+                <li><a href="../classes/p5.game.html">p5.game</a></li>
                 <li><a href="../classes/Sprite.html">Sprite</a></li>
                 <li><a href="../classes/SpriteSheet.html">SpriteSheet</a></li>
         </ul>
@@ -83,20 +83,22 @@
 
 
 	<div class="well well-small">
-            Module: <a href="../modules/p5.play.html">p5.play</a><br>
-            Parent Module: <a href="../modules/p5.play.html">p5.play</a>
+            Module: <a href="../modules/p5.game.html">p5.game</a><br>
+            Parent Module: <a href="../modules/p5.game.html">p5.game</a>
     </div>
 
 
 
 <div class="yuidoc-class-description">
-<p>A Sprite is the main building block of p5.play:
+<p>A Sprite is the main building block of p5.game:
 an element able to store images or animations with a set of
 properties such as position and visibility.
 A Sprite can have a collider that defines the active area to detect
 collisions or overlappings with other sprites and mouse interactions.</p>
 <p>To create a Sprite, use
-<a href="../classes/p5.play.html#method_createSprite" class="crosslink">createSprite</a>.</p>
+<a href="../classes/p5.game.html#method_createSprite" class="crosslink">createSprite</a>.</p>
+<p>Alternatively, you can pass a width, height instead of an image as the first argument to create
+a placeholder sprite.</p>
 
 </div>
 
@@ -110,8 +112,8 @@ collisions or overlappings with other sprites and mouse interactions.</p>
 			<ul>
 				<li class=""><a href="#method-addAnimation"><span class="im">addAnimation</span>(<span class="ia">label</span><span class="ia">animation</span>)</a></li>
 				<li class=""><a href="#method-addImage"><span class="im">addImage</span>(<span class="ia">label</span><span class="ia">img</span>)</a></li>
-				<li class=""><a href="#method-addSpeed"><span class="im">addSpeed</span>(<span class="ia">speed</span><span class="ia">angle</span>)</a></li>
 				<li class=""><a href="#method-addToGroup"><span class="im">addToGroup</span>(<span class="ia">group</span>)</a></li>
+				<li class=""><a href="#method-addVelocity"><span class="im">addVelocity</span>(<span class="ia">speed</span><span class="ia">angle</span>)</a></li>
 				<li class=""><a href="#method-attractionPoint"><span class="im">attractionPoint</span>(<span class="ia">magnitude</span><span class="ia">pointX</span><span class="ia">pointY</span>)</a></li>
 				<li class=""><a href="#method-bounce"><span class="im">bounce</span>(<span class="ia">target</span><span class="ia">callback</span>)</a></li>
 				<li class=""><a href="#method-changeAnimation"><span class="im">changeAnimation</span>(<span class="ia">label</span>)</a></li>
@@ -124,6 +126,7 @@ collisions or overlappings with other sprites and mouse interactions.</p>
 				<li class=""><a href="#method-getBoundingBox"><span class="im">getBoundingBox</span>()</a></li>
 				<li class=""><a href="#method-getDirection"><span class="im">getDirection</span>()</a></li>
 				<li class=""><a href="#method-getSpeed"><span class="im">getSpeed</span>()</a></li>
+				<li class=""><a href="#method-isTouching"><span class="im">isTouching</span>(<span class="ia">target</span>)</a></li>
 				<li class=""><a href="#method-limitSpeed"><span class="im">limitSpeed</span>(<span class="ia">max</span>)</a></li>
 				<li class=""><a href="#method-mirrorX"><span class="im">mirrorX</span>(<span class="ia">dir</span>)</a></li>
 				<li class=""><a href="#method-mirrorY"><span class="im">mirrorY</span>(<span class="ia">dir</span>)</a></li>
@@ -134,7 +137,8 @@ collisions or overlappings with other sprites and mouse interactions.</p>
 				<li class=""><a href="#method-remove"><span class="im">remove</span>()</a></li>
 				<li class=""><a href="#method-setCollider"><span class="im">setCollider</span>(<span class="ia">type</span><span class="ia">offsetX</span><span class="ia">offsetY</span><span class="ia">width</span><span class="ia">height</span>)</a></li>
 				<li class=""><a href="#method-setDefaultCollider"><span class="im">setDefaultCollider</span>()</a></li>
-				<li class=""><a href="#method-setSpeed"><span class="im">setSpeed</span>(<span class="ia">speed</span><span class="ia">angle</span>)</a></li>
+				<li class=""><a href="#method-setDirection"><span class="im">setDirection</span>(<span class="ia">direction</span>)</a></li>
+				<li class=""><a href="#method-setSpeed"><span class="im">setSpeed</span>(<span class="ia">speed</span>)</a></li>
 				<li class=""><a href="#method-setVelocity"><span class="im">setVelocity</span>(<span class="ia">x</span><span class="ia">y</span>)</a></li>
 				<li class=""><a href="#method-update"><span class="im">update</span>()</a></li>
 			</ul>
@@ -143,15 +147,21 @@ collisions or overlappings with other sprites and mouse interactions.</p>
 		<li>
 			<strong>Properties</strong>
 			<ul>
+				<li class="private"><a href="#prop-_drawnWithCamera"><span class="ip">_drawnWithCamera</span></a></li>
 				<li class="private"><a href="#prop-_rotation"><span class="ip">_rotation</span></a></li>
 				<li class=""><a href="#prop-animation"><span class="ip">animation</span></a></li>
+				<li class=""><a href="#prop-bottom"><span class="ip">bottom</span></a></li>
+				<li class=""><a href="#prop-centerX"><span class="ip">centerX</span></a></li>
+				<li class=""><a href="#prop-centerX"><span class="ip">centerX</span></a></li>
 				<li class=""><a href="#prop-collider"><span class="ip">collider</span></a></li>
 				<li class=""><a href="#prop-debug"><span class="ip">debug</span></a></li>
 				<li class=""><a href="#prop-depth"><span class="ip">depth</span></a></li>
 				<li class=""><a href="#prop-friction"><span class="ip">friction</span></a></li>
 				<li class=""><a href="#prop-groups"><span class="ip">groups</span></a></li>
 				<li class=""><a href="#prop-height"><span class="ip">height</span></a></li>
+				<li class=""><a href="#prop-ignoreCollisions"><span class="ip">ignoreCollisions</span></a></li>
 				<li class=""><a href="#prop-immovable"><span class="ip">immovable</span></a></li>
+				<li class=""><a href="#prop-left"><span class="ip">left</span></a></li>
 				<li class=""><a href="#prop-life"><span class="ip">life</span></a></li>
 				<li class=""><a href="#prop-mass"><span class="ip">mass</span></a></li>
 				<li class=""><a href="#prop-maxSpeed"><span class="ip">maxSpeed</span></a></li>
@@ -164,11 +174,15 @@ collisions or overlappings with other sprites and mouse interactions.</p>
 				<li class=""><a href="#prop-previousPosition"><span class="ip">previousPosition</span></a></li>
 				<li class=""><a href="#prop-removed"><span class="ip">removed</span></a></li>
 				<li class=""><a href="#prop-restitution"><span class="ip">restitution</span></a></li>
+				<li class=""><a href="#prop-right"><span class="ip">right</span></a></li>
 				<li class=""><a href="#prop-rotateToDirection"><span class="ip">rotateToDirection</span></a></li>
 				<li class=""><a href="#prop-rotation"><span class="ip">rotation</span></a></li>
 				<li class=""><a href="#prop-rotationSpeed"><span class="ip">rotationSpeed</span></a></li>
 				<li class=""><a href="#prop-scale"><span class="ip">scale</span></a></li>
 				<li class=""><a href="#prop-shapeColor"><span class="ip">shapeColor</span></a></li>
+				<li class=""><a href="#prop-top"><span class="ip">top</span></a></li>
+				<li class=""><a href="#prop-top"><span class="ip">top</span></a></li>
+				<li class=""><a href="#prop-top"><span class="ip">top</span></a></li>
 				<li class=""><a href="#prop-touching"><span class="ip">touching</span></a></li>
 				<li class=""><a href="#prop-velocity"><span class="ip">velocity</span></a></li>
 				<li class=""><a href="#prop-visible"><span class="ip">visible</span></a></li>
@@ -210,7 +224,7 @@ collisions or overlappings with other sprites and mouse interactions.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l1886"><code>lib&#x2F;p5.play.js:1886</code></a>
+		<a href="../files/lib_p5.game.js.html#l2105"><code>lib&#x2F;p5.game.js:2105</code></a>
 		</p>
 
 
@@ -219,8 +233,8 @@ collisions or overlappings with other sprites and mouse interactions.</p>
 
 	<div class="description"><p>Adds an animation to the sprite.
 The animation should be preloaded in the preload() function
-using loadAnimation.
-Animations require a identifying label (string) to change them.
+using loadAnimation.</p>
+<p>Animations require a identifying label (string) to change them.
 Animations are stored in the sprite but not necessarily displayed
 until Sprite.changeAnimation(label) is called.</p>
 <p>Usage:</p>
@@ -285,7 +299,7 @@ until Sprite.changeAnimation(label) is called.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l1858"><code>lib&#x2F;p5.play.js:1858</code></a>
+		<a href="../files/lib_p5.game.js.html#l2077"><code>lib&#x2F;p5.game.js:2077</code></a>
 		</p>
 
 
@@ -334,9 +348,56 @@ until Sprite.changeAnimation(label) is called</p>
 
 
 </div>
-<div id="method-addSpeed" class="method item ">
+<div id="method-addToGroup" class="method item ">
 	<div class="method-signature">
-	<span class="name"><code>addSpeed</code></span>
+	<span class="name"><code>addToGroup</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>group</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/lib_p5.game.js.html#l1971"><code>lib&#x2F;p5.game.js:1971</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Adds the sprite to an existing group</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">group</code>
+						<span class="type">Object</span>
+
+
+
+				</li>
+			</ul>
+		</div>
+
+
+</div>
+<div id="method-addVelocity" class="method item ">
+	<div class="method-signature">
+	<span class="name"><code>addVelocity</code></span>
 
 		<div class="args">
 			<span class="paren">(</span><ul class="args-list inline commas">
@@ -358,7 +419,7 @@ until Sprite.changeAnimation(label) is called</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l1823"><code>lib&#x2F;p5.play.js:1823</code></a>
+		<a href="../files/lib_p5.game.js.html#l2042"><code>lib&#x2F;p5.game.js:2042</code></a>
 		</p>
 
 
@@ -396,53 +457,6 @@ The force is added to the current velocity.</p>
 
 
 </div>
-<div id="method-addToGroup" class="method item ">
-	<div class="method-signature">
-	<span class="name"><code>addToGroup</code></span>
-
-		<div class="args">
-			<span class="paren">(</span><ul class="args-list inline commas">
-				<li class="arg">
-						<code>group</code>
-				</li>
-			</ul><span class="paren">)</span>
-		</div>
-	</div>
-
-
-
-
-
-
-	<div class="meta">
-				<p>
-				Defined in
-		<a href="../files/lib_p5.play.js.html#l1756"><code>lib&#x2F;p5.play.js:1756</code></a>
-		</p>
-
-
-
-	</div>
-
-	<div class="description"><p>Adds the sprite to an existing group</p>
-</div>
-
-		<div class="params">
-			<h4>Parameters:</h4>
-
-			<ul class="params-list">
-				<li class="param">
-						<code class="param-name">group</code>
-						<span class="type">Object</span>
-
-
-
-				</li>
-			</ul>
-		</div>
-
-
-</div>
 <div id="method-attractionPoint" class="method item ">
 	<div class="method-signature">
 	<span class="name"><code>attractionPoint</code></span>
@@ -470,7 +484,7 @@ The force is added to the current velocity.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l1842"><code>lib&#x2F;p5.play.js:1842</code></a>
+		<a href="../files/lib_p5.game.js.html#l2061"><code>lib&#x2F;p5.game.js:2061</code></a>
 		</p>
 
 
@@ -544,7 +558,7 @@ The force is added to the current velocity.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l2164"><code>lib&#x2F;p5.play.js:2164</code></a>
+		<a href="../files/lib_p5.game.js.html#l2388"><code>lib&#x2F;p5.game.js:2388</code></a>
 		</p>
 
 
@@ -634,7 +648,7 @@ function explosion(spriteA, spriteB) {
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l1986"><code>lib&#x2F;p5.play.js:1986</code></a>
+		<a href="../files/lib_p5.game.js.html#l2189"><code>lib&#x2F;p5.game.js:2189</code></a>
 		</p>
 
 
@@ -684,7 +698,7 @@ See Animation for more control over the sequence.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l1965"><code>lib&#x2F;p5.play.js:1965</code></a>
+		<a href="../files/lib_p5.game.js.html#l2168"><code>lib&#x2F;p5.game.js:2168</code></a>
 		</p>
 
 
@@ -740,7 +754,7 @@ Equivalent to changeAnimation</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l2101"><code>lib&#x2F;p5.play.js:2101</code></a>
+		<a href="../files/lib_p5.game.js.html#l2325"><code>lib&#x2F;p5.game.js:2325</code></a>
 		</p>
 
 
@@ -748,7 +762,7 @@ Equivalent to changeAnimation</p>
 	</div>
 
 	<div class="description"><p>Checks if the the sprite is overlapping another sprite or a group.
-If the overlap is positive the current sprite will be displace by
+If the overlap is positive the current sprite will be displaced by
 the colliding one in the closest non-overlapping position.</p>
 <p>The check is performed using the colliders. If colliders are not set
 they will be created automatically from the image/animation bounding box.</p>
@@ -836,7 +850,7 @@ function explosion(spriteA, spriteB) {
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l2133"><code>lib&#x2F;p5.play.js:2133</code></a>
+		<a href="../files/lib_p5.game.js.html#l2357"><code>lib&#x2F;p5.game.js:2357</code></a>
 		</p>
 
 
@@ -922,7 +936,7 @@ function explosion(spriteA, spriteB) {
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l1605"><code>lib&#x2F;p5.play.js:1605</code></a>
+		<a href="../files/lib_p5.game.js.html#l1817"><code>lib&#x2F;p5.game.js:1817</code></a>
 		</p>
 
 
@@ -951,7 +965,7 @@ Called automatically, it should not be overridden</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l1668"><code>lib&#x2F;p5.play.js:1668</code></a>
+		<a href="../files/lib_p5.game.js.html#l1880"><code>lib&#x2F;p5.game.js:1880</code></a>
 		</p>
 
 
@@ -987,7 +1001,7 @@ Will display the sprite as circle.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l1976"><code>lib&#x2F;p5.play.js:1976</code></a>
+		<a href="../files/lib_p5.game.js.html#l2179"><code>lib&#x2F;p5.game.js:2179</code></a>
 		</p>
 
 
@@ -1024,7 +1038,7 @@ Will display the sprite as circle.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l1531"><code>lib&#x2F;p5.play.js:1531</code></a>
+		<a href="../files/lib_p5.game.js.html#l1743"><code>lib&#x2F;p5.game.js:1743</code></a>
 		</p>
 
 
@@ -1055,7 +1069,7 @@ Will display the sprite as circle.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l1732"><code>lib&#x2F;p5.play.js:1732</code></a>
+		<a href="../files/lib_p5.game.js.html#l1947"><code>lib&#x2F;p5.game.js:1947</code></a>
 		</p>
 
 
@@ -1095,7 +1109,7 @@ Will display the sprite as circle.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l1722"><code>lib&#x2F;p5.play.js:1722</code></a>
+		<a href="../files/lib_p5.game.js.html#l1937"><code>lib&#x2F;p5.game.js:1937</code></a>
 		</p>
 
 
@@ -1116,6 +1130,78 @@ Will display the sprite as circle.</p>
 			</div>
 		</div>
 
+</div>
+<div id="method-isTouching" class="method item ">
+	<div class="method-signature">
+	<span class="name"><code>isTouching</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>target</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type">Boolean</span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/lib_p5.game.js.html#l2308"><code>lib&#x2F;p5.game.js:2308</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Checks if the sprite is overlapping another sprite or group.
+This is an alias for the overlap() function, but without a callback.</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">target</code>
+						<span class="type">Object</span>
+
+
+					<div class="param-description"><p>Sprite or group to check against the current one</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type">Boolean</span>:
+					<p>True if overlapping</p>
+
+			</div>
+		</div>
+
+		<div class="example">
+			<h4>Example:</h4>
+
+			<div class="example-content">
+				<pre class="code prettyprint"><code>if (player.isTouching(coin)) {
+    score++;
+}</code></pre>
+
+			</div>
+		</div>
 </div>
 <div id="method-limitSpeed" class="method item ">
 	<div class="method-signature">
@@ -1138,7 +1224,7 @@ Will display the sprite as circle.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l1769"><code>lib&#x2F;p5.play.js:1769</code></a>
+		<a href="../files/lib_p5.game.js.html#l1984"><code>lib&#x2F;p5.game.js:1984</code></a>
 		</p>
 
 
@@ -1190,7 +1276,7 @@ Will display the sprite as circle.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l1551"><code>lib&#x2F;p5.play.js:1551</code></a>
+		<a href="../files/lib_p5.game.js.html#l1763"><code>lib&#x2F;p5.game.js:1763</code></a>
 		</p>
 
 
@@ -1254,7 +1340,7 @@ If no argument returns the current x mirroring</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l1568"><code>lib&#x2F;p5.play.js:1568</code></a>
+		<a href="../files/lib_p5.game.js.html#l1780"><code>lib&#x2F;p5.game.js:1780</code></a>
 		</p>
 
 
@@ -1309,7 +1395,7 @@ If no argument returns the current y mirroring</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l1401"><code>lib&#x2F;p5.play.js:1401</code></a>
+		<a href="../files/lib_p5.game.js.html#l1609"><code>lib&#x2F;p5.game.js:1609</code></a>
 		</p>
 
 
@@ -1350,7 +1436,7 @@ onMouseOver, onMouseOut, onMousePressed, onMouseReleased</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l2072"><code>lib&#x2F;p5.play.js:2072</code></a>
+		<a href="../files/lib_p5.game.js.html#l2279"><code>lib&#x2F;p5.game.js:2279</code></a>
 		</p>
 
 
@@ -1444,7 +1530,7 @@ function explosion(spriteA, spriteB) {
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l2003"><code>lib&#x2F;p5.play.js:2003</code></a>
+		<a href="../files/lib_p5.game.js.html#l2211"><code>lib&#x2F;p5.game.js:2211</code></a>
 		</p>
 
 
@@ -1519,7 +1605,7 @@ against only the visible part of the sprite.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l2039"><code>lib&#x2F;p5.play.js:2039</code></a>
+		<a href="../files/lib_p5.game.js.html#l2246"><code>lib&#x2F;p5.game.js:2246</code></a>
 		</p>
 
 
@@ -1580,7 +1666,7 @@ against only the visible part of the sprite.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l1693"><code>lib&#x2F;p5.play.js:1693</code></a>
+		<a href="../files/lib_p5.game.js.html#l1905"><code>lib&#x2F;p5.game.js:1905</code></a>
 		</p>
 
 
@@ -1627,7 +1713,7 @@ The removed Sprite won't be drawn or updated anymore.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l1474"><code>lib&#x2F;p5.play.js:1474</code></a>
+		<a href="../files/lib_p5.game.js.html#l1682"><code>lib&#x2F;p5.game.js:1682</code></a>
 		</p>
 
 
@@ -1635,7 +1721,7 @@ The removed Sprite won't be drawn or updated anymore.</p>
 	</div>
 
 	<div class="description"><p>Sets a collider for the sprite.</p>
-<p>In p5.play a Collider is an invisible circle or rectangle
+<p>In p5.game a Collider is an invisible circle or rectangle
 that can have any size or position relative to the sprite and which
 will be used to detect collisions and overlapping with other sprites,
 or the mouse cursor.</p>
@@ -1724,7 +1810,7 @@ different dimensions and offset from the sprite's center.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l1367"><code>lib&#x2F;p5.play.js:1367</code></a>
+		<a href="../files/lib_p5.game.js.html#l1575"><code>lib&#x2F;p5.game.js:1575</code></a>
 		</p>
 
 
@@ -1738,17 +1824,14 @@ placeholder rectangle or the bounding box of the image.</p>
 
 
 </div>
-<div id="method-setSpeed" class="method item ">
+<div id="method-setDirection" class="method item ">
 	<div class="method-signature">
-	<span class="name"><code>setSpeed</code></span>
+	<span class="name"><code>setDirection</code></span>
 
 		<div class="args">
 			<span class="paren">(</span><ul class="args-list inline commas">
 				<li class="arg">
-						<code>speed</code>
-				</li>
-				<li class="arg">
-						<code class="optional">angle</code>
+						<code>direction</code>
 				</li>
 			</ul><span class="paren">)</span>
 		</div>
@@ -1762,18 +1845,66 @@ placeholder rectangle or the bounding box of the image.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l1789"><code>lib&#x2F;p5.play.js:1789</code></a>
+		<a href="../files/lib_p5.game.js.html#l2017"><code>lib&#x2F;p5.game.js:2017</code></a>
 		</p>
 
 
 
 	</div>
 
-	<div class="description"><p>Set the speed and direction of the sprite.
-The action overwrites the current velocity.
-If direction is not supplied, the current direction is maintained.
-If direction is not supplied and there is no current velocity, the current
-rotation angle used for the direction.</p>
+	<div class="description"><p>Set the direction of a moving sprite.</p>
+<p>Note that direction cannot be set if speed is 0. <code>Use setSpeed(speed)</code> before
+setting direction, or use <code>setVelocity(speed, direction)</code> to set both at once.</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">direction</code>
+						<span class="type">Number</span>
+
+
+					<div class="param-description"><p>Direction in degrees</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+
+</div>
+<div id="method-setSpeed" class="method item ">
+	<div class="method-signature">
+	<span class="name"><code>setSpeed</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>speed</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/lib_p5.game.js.html#l2004"><code>lib&#x2F;p5.game.js:2004</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Set the speed of the sprite in pixels per frame.
+The sprite's position will automatically update on each frame.</p>
 </div>
 
 		<div class="params">
@@ -1786,16 +1917,6 @@ rotation angle used for the direction.</p>
 
 
 					<div class="param-description"><p>Scalar speed</p>
-</div>
-
-				</li>
-				<li class="param">
-						<code class="param-name optional">[angle]</code>
-						<span class="type">Number</span>
-						<span class="flag optional" title="This parameter is optional.">optional</span>
-
-
-					<div class="param-description"><p>Direction in degrees</p>
 </div>
 
 				</li>
@@ -1828,14 +1949,15 @@ rotation angle used for the direction.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l1710"><code>lib&#x2F;p5.play.js:1710</code></a>
+		<a href="../files/lib_p5.game.js.html#l1922"><code>lib&#x2F;p5.game.js:1922</code></a>
 		</p>
 
 
 
 	</div>
 
-	<div class="description"><p>Sets the velocity vector.</p>
+	<div class="description"><p>Sets the velocity vector given a speed and direction (in degrees).
+To set velocity x,y components directly, use <code>velocity.x</code> or <code>velocity.y</code> instead.</p>
 </div>
 
 		<div class="params">
@@ -1880,7 +2002,7 @@ rotation angle used for the direction.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l1238"><code>lib&#x2F;p5.play.js:1238</code></a>
+		<a href="../files/lib_p5.game.js.html#l1440"><code>lib&#x2F;p5.game.js:1440</code></a>
 		</p>
 
 
@@ -1901,6 +2023,35 @@ Called automatically at the beginning of the draw cycle.</p>
         <h2 class="off-left">Properties</h2>
 
         <div class="item-list">
+<div id="prop-_drawnWithCamera" class="property item private">
+    <h3 class="name"><code>_drawnWithCamera</code></h3>
+    <span class="type">Boolean</span>
+
+
+        <span class="flag private">private</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_p5.game.js.html#l1400"><code>lib&#x2F;p5.game.js:1400</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Internal variable to keep track of whether this sprite is drawn while
+the camera is active.
+Used in Sprite.update() to know whether to use camera mouse coordinates.</p>
+
+    </div>
+
+        <p><strong>Default:</strong> false</p>
+
+
+</div>
 <div id="prop-_rotation" class="property item private">
     <h3 class="name"><code>_rotation</code></h3>
     <span class="type">Number</span>
@@ -1913,7 +2064,7 @@ Called automatically at the beginning of the draw cycle.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l936"><code>lib&#x2F;p5.play.js:936</code></a>
+        <a href="../files/lib_p5.game.js.html#l1114"><code>lib&#x2F;p5.game.js:1114</code></a>
         </p>
 
 
@@ -1940,7 +2091,7 @@ Note: external callers access this through the rotation property above.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l1203"><code>lib&#x2F;p5.play.js:1203</code></a>
+        <a href="../files/lib_p5.game.js.html#l1392"><code>lib&#x2F;p5.game.js:1392</code></a>
         </p>
 
 
@@ -1948,6 +2099,81 @@ Note: external callers access this through the rotation property above.</p>
 
     <div class="description">
         <p>Reference to the current animation.</p>
+
+    </div>
+
+
+
+</div>
+<div id="prop-bottom" class="property item ">
+    <h3 class="name"><code>bottom</code></h3>
+    <span class="type">Number</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_p5.game.js.html#l939"><code>lib&#x2F;p5.game.js:939</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The sprite's bottom edge on the Y-axis</p>
+
+    </div>
+
+
+
+</div>
+<div id="prop-centerX" class="property item ">
+    <h3 class="name"><code>centerX</code></h3>
+    <span class="type">Number</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_p5.game.js.html#l879"><code>lib&#x2F;p5.game.js:879</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The sprite's center on the X-axis (alias for <code>Sprite.position.x</code>)</p>
+
+    </div>
+
+
+
+</div>
+<div id="prop-centerX" class="property item ">
+    <h3 class="name"><code>centerX</code></h3>
+    <span class="type">Number</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_p5.game.js.html#l894"><code>lib&#x2F;p5.game.js:894</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The sprite's center on the X-axis (alias for <code>Sprite.position.y</code>)</p>
 
     </div>
 
@@ -1965,7 +2191,7 @@ Note: external callers access this through the rotation property above.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l840"><code>lib&#x2F;p5.play.js:840</code></a>
+        <a href="../files/lib_p5.game.js.html#l1018"><code>lib&#x2F;p5.game.js:1018</code></a>
         </p>
 
 
@@ -1996,7 +2222,7 @@ of the sprite or from the image dimension in case of animate sprites</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l1172"><code>lib&#x2F;p5.play.js:1172</code></a>
+        <a href="../files/lib_p5.game.js.html#l1361"><code>lib&#x2F;p5.game.js:1361</code></a>
         </p>
 
 
@@ -2022,7 +2248,7 @@ of the sprite or from the image dimension in case of animate sprites</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l969"><code>lib&#x2F;p5.play.js:969</code></a>
+        <a href="../files/lib_p5.game.js.html#l1147"><code>lib&#x2F;p5.game.js:1147</code></a>
         </p>
 
 
@@ -2054,7 +2280,7 @@ drawing.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l828"><code>lib&#x2F;p5.play.js:828</code></a>
+        <a href="../files/lib_p5.game.js.html#l1006"><code>lib&#x2F;p5.game.js:1006</code></a>
         </p>
 
 
@@ -2083,7 +2309,7 @@ The friction should be close to 0 (eg. 0.01)
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l1190"><code>lib&#x2F;p5.play.js:1190</code></a>
+        <a href="../files/lib_p5.game.js.html#l1379"><code>lib&#x2F;p5.game.js:1379</code></a>
         </p>
 
 
@@ -2108,7 +2334,7 @@ The friction should be close to 0 (eg. 0.01)
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l1105"><code>lib&#x2F;p5.play.js:1105</code></a>
+        <a href="../files/lib_p5.game.js.html#l1294"><code>lib&#x2F;p5.game.js:1294</code></a>
         </p>
 
 
@@ -2125,6 +2351,33 @@ placeholder rectangle.</p>
 
 
 </div>
+<div id="prop-ignoreCollisions" class="property item ">
+    <h3 class="name"><code>ignoreCollisions</code></h3>
+    <span class="type">Boolean</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_p5.game.js.html#l1186"><code>lib&#x2F;p5.game.js:1186</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Whether or not collisions are ignored. Set to <code>true</code> to turn collision
+handling off for this sprite.</p>
+
+    </div>
+
+        <p><strong>Default:</strong> false</p>
+
+
+</div>
 <div id="prop-immovable" class="property item ">
     <h3 class="name"><code>immovable</code></h3>
     <span class="type">Boolean</span>
@@ -2136,7 +2389,7 @@ placeholder rectangle.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l889"><code>lib&#x2F;p5.play.js:889</code></a>
+        <a href="../files/lib_p5.game.js.html#l1067"><code>lib&#x2F;p5.game.js:1067</code></a>
         </p>
 
 
@@ -2152,6 +2405,31 @@ Simulates an infinite mass or an anchored object.</p>
 
 
 </div>
+<div id="prop-left" class="property item ">
+    <h3 class="name"><code>left</code></h3>
+    <span class="type">Number</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_p5.game.js.html#l954"><code>lib&#x2F;p5.game.js:954</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The sprite's left edge on the X-axis</p>
+
+    </div>
+
+
+
+</div>
 <div id="prop-life" class="property item ">
     <h3 class="name"><code>life</code></h3>
     <span class="type">Number</span>
@@ -2163,7 +2441,7 @@ Simulates an infinite mass or an anchored object.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l1160"><code>lib&#x2F;p5.play.js:1160</code></a>
+        <a href="../files/lib_p5.game.js.html#l1349"><code>lib&#x2F;p5.game.js:1349</code></a>
         </p>
 
 
@@ -2192,7 +2470,7 @@ Disabled if set to -1.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l878"><code>lib&#x2F;p5.play.js:878</code></a>
+        <a href="../files/lib_p5.game.js.html#l1056"><code>lib&#x2F;p5.game.js:1056</code></a>
         </p>
 
 
@@ -2220,7 +2498,7 @@ The higher the mass the least the sprite will be affected by collisions.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l818"><code>lib&#x2F;p5.play.js:818</code></a>
+        <a href="../files/lib_p5.game.js.html#l996"><code>lib&#x2F;p5.game.js:996</code></a>
         </p>
 
 
@@ -2247,7 +2525,7 @@ The value can only be positive. If set to -1, there's no limit.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l1008"><code>lib&#x2F;p5.play.js:1008</code></a>
+        <a href="../files/lib_p5.game.js.html#l1197"><code>lib&#x2F;p5.game.js:1197</code></a>
         </p>
 
 
@@ -2276,7 +2554,7 @@ onMouseReleased or onMousePressed are set.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l1020"><code>lib&#x2F;p5.play.js:1020</code></a>
+        <a href="../files/lib_p5.game.js.html#l1209"><code>lib&#x2F;p5.game.js:1209</code></a>
         </p>
 
 
@@ -2302,7 +2580,7 @@ Read only.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l1029"><code>lib&#x2F;p5.play.js:1029</code></a>
+        <a href="../files/lib_p5.game.js.html#l1218"><code>lib&#x2F;p5.game.js:1218</code></a>
         </p>
 
 
@@ -2328,7 +2606,7 @@ Read only.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l1141"><code>lib&#x2F;p5.play.js:1141</code></a>
+        <a href="../files/lib_p5.game.js.html#l1330"><code>lib&#x2F;p5.game.js:1330</code></a>
         </p>
 
 
@@ -2356,7 +2634,7 @@ placeholder rectangle.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l1130"><code>lib&#x2F;p5.play.js:1130</code></a>
+        <a href="../files/lib_p5.game.js.html#l1319"><code>lib&#x2F;p5.game.js:1319</code></a>
         </p>
 
 
@@ -2384,7 +2662,7 @@ placeholder rectangle.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l784"><code>lib&#x2F;p5.play.js:784</code></a>
+        <a href="../files/lib_p5.game.js.html#l842"><code>lib&#x2F;p5.game.js:842</code></a>
         </p>
 
 
@@ -2409,7 +2687,7 @@ placeholder rectangle.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l791"><code>lib&#x2F;p5.play.js:791</code></a>
+        <a href="../files/lib_p5.game.js.html#l969"><code>lib&#x2F;p5.game.js:969</code></a>
         </p>
 
 
@@ -2434,7 +2712,7 @@ placeholder rectangle.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l1152"><code>lib&#x2F;p5.play.js:1152</code></a>
+        <a href="../files/lib_p5.game.js.html#l1341"><code>lib&#x2F;p5.game.js:1341</code></a>
         </p>
 
 
@@ -2459,7 +2737,7 @@ placeholder rectangle.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l902"><code>lib&#x2F;p5.play.js:902</code></a>
+        <a href="../files/lib_p5.game.js.html#l1080"><code>lib&#x2F;p5.game.js:1080</code></a>
         </p>
 
 
@@ -2478,6 +2756,31 @@ greater than 1: hyper elastic, energy is increased like in a pinball bumper</p>
 
 
 </div>
+<div id="prop-right" class="property item ">
+    <h3 class="name"><code>right</code></h3>
+    <span class="type">Number</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_p5.game.js.html#l924"><code>lib&#x2F;p5.game.js:924</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The sprite's right edge on the X-axis</p>
+
+    </div>
+
+
+
+</div>
 <div id="prop-rotateToDirection" class="property item ">
     <h3 class="name"><code>rotateToDirection</code></h3>
     <span class="type">Boolean</span>
@@ -2489,7 +2792,7 @@ greater than 1: hyper elastic, energy is increased like in a pinball bumper</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l958"><code>lib&#x2F;p5.play.js:958</code></a>
+        <a href="../files/lib_p5.game.js.html#l1136"><code>lib&#x2F;p5.game.js:1136</code></a>
         </p>
 
 
@@ -2516,7 +2819,7 @@ greater than 1: hyper elastic, energy is increased like in a pinball bumper</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l915"><code>lib&#x2F;p5.play.js:915</code></a>
+        <a href="../files/lib_p5.game.js.html#l1093"><code>lib&#x2F;p5.game.js:1093</code></a>
         </p>
 
 
@@ -2543,7 +2846,7 @@ Note: this is not the movement's direction, see getDirection.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l947"><code>lib&#x2F;p5.play.js:947</code></a>
+        <a href="../files/lib_p5.game.js.html#l1125"><code>lib&#x2F;p5.game.js:1125</code></a>
         </p>
 
 
@@ -2570,7 +2873,7 @@ Note: this is not the movement's direction, see getDirection.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l985"><code>lib&#x2F;p5.play.js:985</code></a>
+        <a href="../files/lib_p5.game.js.html#l1163"><code>lib&#x2F;p5.game.js:1163</code></a>
         </p>
 
 
@@ -2598,7 +2901,7 @@ Example: 2 will be twice the native size of the visuals,
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l1181"><code>lib&#x2F;p5.play.js:1181</code></a>
+        <a href="../files/lib_p5.game.js.html#l1370"><code>lib&#x2F;p5.game.js:1370</code></a>
         </p>
 
 
@@ -2607,6 +2910,81 @@ Example: 2 will be twice the native size of the visuals,
     <div class="description">
         <p>If no image or animations are set this is color of the
 placeholder rectangle</p>
+
+    </div>
+
+
+
+</div>
+<div id="prop-top" class="property item ">
+    <h3 class="name"><code>top</code></h3>
+    <span class="type">Number</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_p5.game.js.html#l849"><code>lib&#x2F;p5.game.js:849</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The sprite's position on the X-axis (alias for <code>Sprite.position.x</code>)</p>
+
+    </div>
+
+
+
+</div>
+<div id="prop-top" class="property item ">
+    <h3 class="name"><code>top</code></h3>
+    <span class="type">Number</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_p5.game.js.html#l864"><code>lib&#x2F;p5.game.js:864</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The sprite's position on the Y-axis (alias for <code>Sprite.position.y</code>)</p>
+
+    </div>
+
+
+
+</div>
+<div id="prop-top" class="property item ">
+    <h3 class="name"><code>top</code></h3>
+    <span class="type">Number</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_p5.game.js.html#l909"><code>lib&#x2F;p5.game.js:909</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The sprite's top edge on the Y-axis</p>
 
     </div>
 
@@ -2624,7 +3002,7 @@ placeholder rectangle</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l861"><code>lib&#x2F;p5.play.js:861</code></a>
+        <a href="../files/lib_p5.game.js.html#l1039"><code>lib&#x2F;p5.game.js:1039</code></a>
         </p>
 
 
@@ -2654,7 +3032,7 @@ collider.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l809"><code>lib&#x2F;p5.play.js:809</code></a>
+        <a href="../files/lib_p5.game.js.html#l987"><code>lib&#x2F;p5.game.js:987</code></a>
         </p>
 
 
@@ -2680,7 +3058,7 @@ Velocity is speed broken down to its vertical and horizontal components.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l999"><code>lib&#x2F;p5.play.js:999</code></a>
+        <a href="../files/lib_p5.game.js.html#l1177"><code>lib&#x2F;p5.game.js:1177</code></a>
         </p>
 
 
@@ -2706,7 +3084,7 @@ Velocity is speed broken down to its vertical and horizontal components.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l1080"><code>lib&#x2F;p5.play.js:1080</code></a>
+        <a href="../files/lib_p5.game.js.html#l1269"><code>lib&#x2F;p5.game.js:1269</code></a>
         </p>
 
 
