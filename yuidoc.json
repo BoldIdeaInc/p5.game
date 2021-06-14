@@ -1,8 +1,8 @@
 {
-    "name": "p5.play",
+    "name": "p5.game",
     "description": "A  p5.js library for games and playthings",
     "version": "1.0.0",
-    "url": "http://molleindustria.org/",
+    "url": "https://boldideainc.github.com/p5.game",
     "logo":"../asterisk.png",
     "options": {
         "outdir": "docs",

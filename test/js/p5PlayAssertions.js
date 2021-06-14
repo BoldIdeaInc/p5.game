@@ -1,4 +1,4 @@
-// Test utilities available in all test files.  Expects chai, p5, and p5.play
+// Test utilities available in all test files.  Expects chai, p5, and p5.game
 // to be in scope.
 var p5PlayAssertions = {
   /**

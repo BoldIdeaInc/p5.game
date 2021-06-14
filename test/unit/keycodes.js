@@ -96,7 +96,7 @@ describe('_keyCodeFromAlias', function() {
       _keyCodeFromAlias('MINUT');
       expect(_warn.firstCall.args[0])
         .to.equal('Key literal "MINUT" is deprecated and may be removed in a ' +
-                  'future version of p5.play. Please use "MINUS" instead.');
+                  'future version of p5.game. Please use "MINUS" instead.');
     });
 
     it('aliases \'COMA\' to \'COMMA\'', function() {
@@ -108,7 +108,7 @@ describe('_keyCodeFromAlias', function() {
       _keyCodeFromAlias('COMA');
       expect(_warn.firstCall.args[0])
         .to.equal('Key literal "COMA" is deprecated and may be removed in a ' +
-                  'future version of p5.play. Please use "COMMA" instead.');
+                  'future version of p5.game. Please use "COMMA" instead.');
     });
   });
 });

@@ -1,6 +1,6 @@
 /** @file Tests for Sprite.collide(sprite) behavior.
  *
- * There are four 'collision' methods in p5.play:
+ * There are four 'collision' methods in p5.game:
  * - overlap (a check with no automatic response)
  * - displace (the caller pushes the callee out of the way)
  * - collide (the callee resists the caller, opposite of displace)

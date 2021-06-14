@@ -12,7 +12,7 @@ describe('Camera', function() {
   // These tests are for testing the fix to:
   // https://github.com/molleindustria/p5.play/issues/107
   //
-  // p5.play registers certain methods that atre run pre- and post-draw().
+  // p5.game registers certain methods that atre run pre- and post-draw().
   // So, a draw() cycle goes (basically) like this:
   //
   // (start with the camera inactive)
@@ -22,7 +22,7 @@ describe('Camera', function() {
   // popCamera()      - unapplies camera transforms and marks camera inactive
   //
   // Mouse events are checked in Sprite.update().
-  // So the basic problem was that sprites would /never/ see the camera active, 
+  // So the basic problem was that sprites would /never/ see the camera active,
   // regardless of whether they were drawn with a camera turned on or not
   describe('mouse events with camera', function() {
     var sprite;
@@ -64,7 +64,7 @@ describe('Camera', function() {
       // post-draw() registered methods
       pInst.camera.off();
     }
-    
+
     it('sees the mouse over the sprite (with or without camera)', function() {
       fullDrawCycle(); // first cycle is to draw the sprite with camera
       moveMouseTo(90, 50);

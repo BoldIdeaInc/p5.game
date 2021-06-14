@@ -1,5 +1,5 @@
 {
-  "name": "p5.play",
+  "name": "p5.game",
   "version": "1.0.0",
   "description": "A p5.js library for the creation of games and playthings.",
   "dependencies": {},
@@ -27,12 +27,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/molleindustria/p5.play.git"
+    "url": "git+https://github.com/molleindustria/p5.game.git"
   },
   "author": "Paolo Pedercini <info@molleindustria.it>",
   "license": "LGPL-2.1",
   "bugs": {
-    "url": "https://github.com/molleindustria/p5.play/issues"
+    "url": "https://github.com/molleindustria/p5.game/issues"
   },
-  "homepage": "https://github.com/molleindustria/p5.play#readme"
+  "homepage": "https://github.com/molleindustria/p5.game#readme"
 }

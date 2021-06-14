@@ -75,7 +75,7 @@ describe('Example sketches', function() {
         '<script src="../test/js/bind.js"></script>',
         '<script src="lib/p5.js"></script>',
         '<script>' + iframeScriptCode + '</script>',
-        '<script src="../lib/p5.play.js"></script>',
+        '<script src="../lib/p5.game.js"></script>',
         '<script src="' + fileName + '"></script>'
       ].join('\n'));
       iframe.contentDocument.close();

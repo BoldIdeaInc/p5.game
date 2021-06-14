@@ -16,7 +16,7 @@ module.exports = {
     "no-undef": "off",
 
     // Likewise, allow unused functions/variables because certain functions like
-    // setup() and draw() get called by global-mode p5.play.
+    // setup() and draw() get called by global-mode p5.game.
     "no-unused-vars": "off"
   }
 };
