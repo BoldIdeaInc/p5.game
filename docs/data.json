@@ -719,9 +719,9 @@
         {
             "file": "lib/p5.game.js",
             "line": 898,
-            "description": "The sprite's center on the X-axis (alias for `Sprite.position.y`)",
+            "description": "The sprite's center on the Y-axis (alias for `Sprite.position.y`)",
             "itemtype": "property",
-            "name": "centerX",
+            "name": "centerY",
             "type": "{Number}",
             "class": "Sprite",
             "module": "p5.game",
