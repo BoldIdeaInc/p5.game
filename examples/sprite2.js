@@ -14,29 +14,20 @@ function setup() {
   //but they can be loaded in setup() and draw() as well
   var img = loadImage('assets/asterisk.png');
   var animation = loadAnimation('assets/ghost_standing0001.png', 'assets/ghost_standing0007.png');
+  var otherAnimation = loadAnimation('assets/cloud_breathing0001.png', 'assets/cloud_breathing0005.png');
 
-  //create a sprite with a placeholder rectangle as visual component
-  boxSprite = createSprite(100, 150, 50, 100);
+  //create a sprite with a placeholder rectangle as visual component (w, h, x, y)
+  boxSprite = createSprite(50, 100, 100, 150);
   //change the color of the placeholder
   boxSprite.shapeColor = color(222, 125, 2);
 
-  //create a sprite and associate an existing image as visual component
-  //it is not necessary to specify the dimensions
-  imageSprite = createSprite(300, 150);
-  imageSprite.addImage(img);
+  //create a sprite and associate an existing image as visual component (img, x, y)
+  //imageSprite = createSprite(img, 300, 150);
+  imageSprite = createSprite(img, 300, 150);
 
-  //create a sprite and associate an existing animation as visual component
-  //since a sprite can have multiple images and animations
-  //the first parameter must be a label identifying the animation
-  animatedSprite = createSprite(500, 150, 50, 100);
-  animatedSprite.addAnimation('floating', animation);
-
-  //alternative usage:
-  //create a sprite and associate a non existing animation to it
-  //the first parameter must be a label
-  anotherAnimatedSprite = createSprite(700, 150, 50, 100);
-  anotherAnimatedSprite.addAnimation('breathing', 'assets/cloud_breathing0001.png', 'assets/cloud_breathing0005.png');
-
+  //create a sprite and associate an existing animation as visual component (animation, x, y)
+  animatedSprite = createSprite(animation, 500, 150);
+  anotherAnimatedSprite = createSprite(otherAnimation, 700, 150);
 }
 
 function draw() {
