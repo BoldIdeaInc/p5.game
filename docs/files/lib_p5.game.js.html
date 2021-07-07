@@ -3010,12 +3010,17 @@ function Group() {
   * Removes all the sprites in the group
   * from the scene.
   *
-  * @method removeSprites
+  * @method removeAll
   */
-  array.removeSprites = function() {
+  array.removeAll = function() {
     while (array.length &gt; 0) {
       array[0].remove();
     }
+  }
+
+  // alias for removeAll (backward compatibility)
+  array.removeSprites = function() {
+    array.removeAll();
   };
 
   /**

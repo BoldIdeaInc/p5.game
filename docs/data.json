@@ -44,7 +44,7 @@
             "namespaces": {},
             "module": "p5.game",
             "file": "lib/p5.game.js",
-            "line": 4134,
+            "line": 4139,
             "description": "p5.game is a library for p5.js to facilitate the creation of games and gamelike\nprojects.\n\nIt provides a flexible Sprite class to manage visual objects in 2D space\nand features such as animation support, basic collision detection\nand resolution, mouse and keyboard interactions, and a virtual camera.\n\np5.game is not a box2D-derived physics engine, it doesn't use events, and it's\ndesigned to be understood and possibly modified by intermediate programmers.\n\nSee the examples folder for more info on how to use this library.",
             "tag": "main",
             "itemtype": "main"
@@ -139,7 +139,7 @@
             "submodule": "p5.game",
             "namespace": "",
             "file": "lib/p5.game.js",
-            "line": 3549,
+            "line": 3554,
             "description": "An Animation object contains a series of images (p5.Image) that\ncan be displayed sequentially.\n\nAll files must be png images. You must include the directory from the sketch root,\nand the extension .png\n\nA sprite can have multiple labeled animations, see Sprite.addAnimation\nand Sprite.changeAnimation, however an animation can be used independently.\n\nAn animation can be created either by passing a series of file names,\nno matter how many or by passing the first and the last file name\nof a numbered sequence.\np5.game will try to detect the sequence pattern.\n\nFor example if the given filenames are\n\"data/file0001.png\" and \"data/file0005.png\" the images\n\"data/file0003.png\" and \"data/file0004.png\" will be loaded as well.",
             "example": [
                 "\n    var sequenceAnimation;\n    var glitch;\n\n    function preload() {\n      sequenceAnimation = loadAnimation(\"data/walking0001.png\", \"data/walking0005.png\");\n      glitch = loadAnimation(\"data/dog.png\", \"data/horse.png\", \"data/cat.png\", \"data/snake.png\");\n    }\n\n    function setup() {\n      createCanvas(800, 600);\n    }\n\n    function draw() {\n      background(0);\n      animation(sequenceAnimation, 100, 100);\n      animation(glitch, 200, 100);\n    }"
@@ -177,7 +177,7 @@
             "submodule": "p5.game",
             "namespace": "",
             "file": "lib/p5.game.js",
-            "line": 4134,
+            "line": 4139,
             "description": "Represents a sprite sheet and all it's frames.  To be used with Animation,\nor static drawing single frames.\n\n There are two different ways to load a SpriteSheet\n\n1. Given width, height that will be used for every frame and the\n   number of frames to cycle through. The sprite sheet must have a\n   uniform grid with consistent rows and columns.\n\n2. Given an array of frame objects that define the position and\n   dimensions of each frame.  This is Flexible because you can use\n   sprite sheets that don't have uniform rows and columns.",
             "example": [
                 "\n    // Method 1 - Using width, height for each frame and number of frames\n    explode_sprite_sheet = loadSpriteSheet('assets/explode_sprite_sheet.png', 171, 158, 11);\n\n    // Method 2 - Using an array of objects that define each frame\n    var player_frames = loadJSON('assets/tiles.json');\n    player_sprite_sheet = loadSpriteSheet('assets/player_spritesheet.png', player_frames);"
@@ -1931,14 +1931,14 @@
             "line": 2924,
             "description": "Removes all the sprites in the group\nfrom the scene.",
             "itemtype": "method",
-            "name": "removeSprites",
+            "name": "removeAll",
             "class": "Group",
             "module": "p5.game",
             "submodule": "p5.game"
         },
         {
             "file": "lib/p5.game.js",
-            "line": 2936,
+            "line": 2941,
             "description": "Removes all references to the group.\nDoes not remove the actual sprites.",
             "itemtype": "method",
             "name": "clear",
@@ -1948,7 +1948,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 2946,
+            "line": 2951,
             "description": "Removes a sprite from the group.\nDoes not remove the actual sprite, only the affiliation (reference).",
             "itemtype": "method",
             "name": "remove",
@@ -1969,7 +1969,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 2978,
+            "line": 2983,
             "description": "Returns a copy of the group as standard array.",
             "itemtype": "method",
             "name": "toArray",
@@ -1979,7 +1979,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 2986,
+            "line": 2991,
             "description": "Returns the highest depth in a group",
             "itemtype": "method",
             "name": "maxDepth",
@@ -1993,7 +1993,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 3002,
+            "line": 3007,
             "description": "Returns the lowest depth in a group",
             "itemtype": "method",
             "name": "minDepth",
@@ -2007,7 +2007,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 3018,
+            "line": 3023,
             "description": "Sets each sprite in this group to debug mode. This draws an outline of the\ncollider, the depth, and center.",
             "itemtype": "property",
             "name": "debug",
@@ -2019,7 +2019,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 3028,
+            "line": 3033,
             "description": "Draws all the sprites in the group.",
             "itemtype": "method",
             "name": "draw",
@@ -2029,7 +2029,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 3063,
+            "line": 3068,
             "description": "Collide each member of group against the target using the given collision\ntype.  Return true if any collision occurred.\nInternal use",
             "access": "private",
             "tagname": "",
@@ -2063,7 +2063,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 3082,
+            "line": 3087,
             "description": "Checks if the the group is overlapping another group or sprite.\nThe check is performed using the colliders. If colliders are not set\nthey will be created automatically from the image/animation bounding box.\n\nA callback function can be specified to perform additional operations\nwhen the overlap occurs.\nThe function will be called for each single sprite overlapping.\nThe parameter of the function are respectively the\nmember of the current group and the other sprite passed as parameter.",
             "example": [
                 "\n    group.overlap(otherSprite, explosion);\n\n    function explosion(spriteA, spriteB) {\n      spriteA.remove();\n      spriteB.score++;\n    }"
@@ -2093,7 +2093,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 3109,
+            "line": 3114,
             "description": "Checks if the the group is overlapping another group or sprite.\nIf the overlap is positive the sprites in the group will be displaced\nby the colliding one to the closest non-overlapping positions.\n\nThe check is performed using the colliders. If colliders are not set\nthey will be created automatically from the image/animation bounding box.\n\nA callback function can be specified to perform additional operations\nwhen the overlap occours.\nThe function will be called for each single sprite overlapping.\nThe parameter of the function are respectively the\nmember of the current group and the other sprite passed as parameter.",
             "example": [
                 "\n    group.collide(otherSprite, explosion);\n\n    function explosion(spriteA, spriteB) {\n      spriteA.remove();\n      spriteB.score++;\n    }"
@@ -2123,7 +2123,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 3138,
+            "line": 3143,
             "description": "Checks if the the group is overlapping another group or sprite.\nIf the overlap is positive the sprites in the group will displace\nthe colliding ones to the closest non-overlapping positions.\n\nThe check is performed using the colliders. If colliders are not set\nthey will be created automatically from the image/animation bounding box.\n\nA callback function can be specified to perform additional operations\nwhen the overlap occurs.\nThe function will be called for each single sprite overlapping.\nThe parameter of the function are respectively the\nmember of the current group and the other sprite passed as parameter.",
             "example": [
                 "\n    group.displace(otherSprite, explosion);\n\n    function explosion(spriteA, spriteB) {\n      spriteA.remove();\n      spriteB.score++;\n    }"
@@ -2153,7 +2153,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 3167,
+            "line": 3172,
             "description": "Checks if the the group is overlapping another group or sprite.\nIf the overlap is positive the sprites will bounce affecting each\nother's trajectories depending on their .velocity, .mass and .restitution.\n\nThe check is performed using the colliders. If colliders are not set\nthey will be created automatically from the image/animation bounding box.\n\nA callback function can be specified to perform additional operations\nwhen the overlap occours.\nThe function will be called for each single sprite overlapping.\nThe parameter of the function are respectively the\nmember of the current group and the other sprite passed as parameter.",
             "example": [
                 "\n    group.bounce(otherSprite, explosion);\n\n    function explosion(spriteA, spriteB) {\n      spriteA.remove();\n      spriteB.score++;\n    }"
@@ -2183,7 +2183,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 3599,
+            "line": 3604,
             "description": "Array of frames (p5.Image)",
             "itemtype": "property",
             "name": "images",
@@ -2194,7 +2194,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 3616,
+            "line": 3621,
             "description": "The sprite this animation was added to, if any.",
             "itemtype": "property",
             "name": "sprite",
@@ -2206,7 +2206,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 3625,
+            "line": 3630,
             "description": "Delay between frames in number of draw cycles.\nIf set to 4 the framerate of the animation would be the\nsketch framerate divided by 4 (60fps = 15fps)",
             "itemtype": "property",
             "name": "frameDelay",
@@ -2218,7 +2218,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 3636,
+            "line": 3641,
             "description": "True if the animation is currently playing.",
             "itemtype": "property",
             "name": "playing",
@@ -2230,7 +2230,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 3645,
+            "line": 3650,
             "description": "Animation visibility.",
             "itemtype": "property",
             "name": "visible",
@@ -2242,7 +2242,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 3654,
+            "line": 3659,
             "description": "If set to false the animation will stop after reaching the last frame",
             "itemtype": "property",
             "name": "looping",
@@ -2254,7 +2254,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 3663,
+            "line": 3668,
             "description": "True if frame changed during the last draw cycle",
             "itemtype": "property",
             "name": "frameChanged",
@@ -2265,7 +2265,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 3792,
+            "line": 3797,
             "description": "Objects are passed by reference so to have different sprites\nusing the same animation you need to clone it.",
             "itemtype": "method",
             "name": "clone",
@@ -2279,7 +2279,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 3818,
+            "line": 3823,
             "description": "Draws the animation at coordinate x and y.\nUpdates the frames automatically.",
             "itemtype": "method",
             "name": "draw",
@@ -2308,7 +2308,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 3929,
+            "line": 3934,
             "description": "Plays the animation.",
             "itemtype": "method",
             "name": "play",
@@ -2318,7 +2318,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 3939,
+            "line": 3944,
             "description": "Stops the animation.",
             "itemtype": "method",
             "name": "stop",
@@ -2328,7 +2328,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 3948,
+            "line": 3953,
             "description": "Rewinds the animation to the first frame.",
             "itemtype": "method",
             "name": "rewind",
@@ -2338,7 +2338,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 3957,
+            "line": 3962,
             "description": "A function that executes when an animation completes.",
             "callback": "animationCompleteCallback",
             "params": [
@@ -2354,7 +2354,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 3963,
+            "line": 3968,
             "description": "A reference to a function that will be executed when the animation complets.\nThis function may accept an `animation` parameter, containing the animation\nthat was completed. If the animation was attached to a sprite, you can access",
             "itemtype": "property",
             "name": "onComplete",
@@ -2365,7 +2365,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 3975,
+            "line": 3980,
             "description": "Changes the current frame.",
             "itemtype": "method",
             "name": "changeFrame",
@@ -2382,7 +2382,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 3991,
+            "line": 3996,
             "description": "Goes to the next frame and stops.",
             "itemtype": "method",
             "name": "nextFrame",
@@ -2392,7 +2392,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 4007,
+            "line": 4012,
             "description": "Goes to the previous frame and stops.",
             "itemtype": "method",
             "name": "previousFrame",
@@ -2402,7 +2402,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 4023,
+            "line": 4028,
             "description": "Plays the animation forward or backward toward a target frame.",
             "itemtype": "method",
             "name": "goToFrame",
@@ -2419,7 +2419,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 4043,
+            "line": 4048,
             "description": "Returns the current frame number.",
             "itemtype": "method",
             "name": "getFrame",
@@ -2433,7 +2433,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 4053,
+            "line": 4058,
             "description": "Returns the last frame number.",
             "itemtype": "method",
             "name": "getLastFrame",
@@ -2447,7 +2447,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 4063,
+            "line": 4068,
             "description": "Returns `true` if the current frame is the last frame in the animation.",
             "itemtype": "method",
             "name": "isLastFrame",
@@ -2461,7 +2461,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 4073,
+            "line": 4078,
             "description": "Returns the current frame image as p5.Image.",
             "itemtype": "method",
             "name": "getFrameImage",
@@ -2475,7 +2475,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 4083,
+            "line": 4088,
             "description": "Returns the frame image at the specified frame number.",
             "itemtype": "method",
             "name": "getImageAt",
@@ -2496,7 +2496,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 4094,
+            "line": 4099,
             "description": "Returns the current frame width in pixels.\nIf there is no image loaded, returns 1.",
             "itemtype": "method",
             "name": "getWidth",
@@ -2510,7 +2510,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 4112,
+            "line": 4117,
             "description": "Returns the current frame height in pixels.\nIf there is no image loaded, returns 1.",
             "itemtype": "method",
             "name": "getHeight",
@@ -2524,7 +2524,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 4169,
+            "line": 4174,
             "description": "Generate the frames data for this sprite sheet baesd on user params",
             "access": "private",
             "tagname": "",
@@ -2536,7 +2536,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 4223,
+            "line": 4228,
             "description": "Draws a specific frame to the canvas.",
             "params": [
                 {
@@ -2570,7 +2570,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 4252,
+            "line": 4257,
             "description": "Objects are passed by reference so to have different sprites\nusing the same animation you need to clone it.",
             "itemtype": "method",
             "name": "clone",
@@ -2584,7 +2584,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 4647,
+            "line": 4652,
             "description": "Log a warning message to the host console, using native `console.warn`\nif it is available but falling back on `console.log` if not.  If no\nconsole is available, this method will fail silently.",
             "itemtype": "method",
             "name": "_warn",
@@ -2603,7 +2603,7 @@
         },
         {
             "file": "lib/p5.game.js",
-            "line": 4671,
+            "line": 4676,
             "description": "Fix for p5.prototype.loadSound to show error message when file is not found",
             "class": "SpriteSheet",
             "module": "p5.game",
@@ -2613,15 +2613,15 @@
     "warnings": [
         {
             "message": "unknown tag: callback",
-            "line": " lib/p5.game.js:3957"
+            "line": " lib/p5.game.js:3962"
         },
         {
             "message": "Missing item type\nA function that executes when an animation completes.",
-            "line": " lib/p5.game.js:3957"
+            "line": " lib/p5.game.js:3962"
         },
         {
             "message": "Missing item type\nFix for p5.prototype.loadSound to show error message when file is not found",
-            "line": " lib/p5.game.js:4671"
+            "line": " lib/p5.game.js:4676"
         }
     ]
 }
