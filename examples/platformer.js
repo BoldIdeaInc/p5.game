@@ -12,10 +12,10 @@ let JUMP_FORCE = 12;
 
 function preload() {
   // Note: you will also need to customize your player's collider box in the createPlayer() function
-  assets.playerStanding = loadImage("assets/p1_stand.png");
-  assets.playerJumping = loadImage("assets/p1_jump.png");
-  assets.playerWalking = loadAnimation("assets/p1_walk01.png", "assets/p1_walk11.png");
-  assets.platform = loadImage("assets/platform.png");
+  assets.playerStanding = loadImage("assets/platformer/p1_stand.png");
+  assets.playerJumping = loadImage("assets/platformer/p1_jump.png");
+  assets.playerWalking = loadAnimation("assets/platformer/p1_walk01.png", "assets/platformer/p1_walk11.png");
+  assets.platform = loadImage("assets/platformer/platform.png");
 }
 
 function createPlatform(x, y) {
