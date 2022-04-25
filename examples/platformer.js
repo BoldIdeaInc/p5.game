@@ -56,29 +56,35 @@ function setup() {
     // call createPlayer() which sets up the player sprite
     createPlayer();
 
+    // Turn on the camera so we can scroll
+    camera.on();
+    camera.position.x = player.centerX;
+
     // create `platforms` sprite group (this makes collision detections easier)
     platforms = createGroup();
 
     // call createPlatform() which also adds the created sprite to the group
     createPlatform(300, 460);
     createPlatform(450, 350);
+    createPlatform(600, 460);
+    createPlatform(810, 460);
 }
 
 function updatePlayerMovement() {
     /*
-      For proper collision handling with our platforms, it's important to
-      perform the following steps in order:
+    For proper collision handling with our platforms, it's important to
+    perform the following steps in order:
 
-      1. Update horizontal/vertical speed when control keys are pressed
-      2. Apply gravity and resistance
-      3. Update horizontal position
-      4. If touching a platform, stop horizontal movement
-      5. Update vertical position
-      6. If touching a platform, stop vertical movement
+    1. Update horizontal/vertical speed when control keys are pressed
+    2. Apply gravity and resistance
+    3. Update horizontal position
+    4. If touching a platform, stop horizontal movement
+    5. Update vertical position
+    6. If touching a platform, stop vertical movement
 
-      It's important to update horizontal position and collision-checking
-      BEFORE updating vertical movement. Otherwise the sprite will get "stuck"
-      inside the platform.
+    It's important to update horizontal position and collision-checking
+    BEFORE updating vertical movement. Otherwise the sprite will get "stuck"
+    inside the platform.
     */
 
     // Step 1: Update horizontal/vertical speed when control keys are pressed
@@ -148,9 +154,27 @@ function updatePlayerAppearance() {
     }
 }
 
+function updateCamera() {
+    /*
+    Here we implement the simplest form of camera movement: player-locked.
+    The camera is always positioned on the player.
+
+    See the following links for some great articles on camera movement in 2D platformers:
+
+    - https://www.samjhhu.com/2d-platformer-camera/
+    - http://www.imake-games.com/cameras-in-2d-platformers/
+    */
+
+    camera.position.x = player.centerX;
+
+    // if you have more height in your levels, you can also lock camera to the player vertically:
+    // camera.position.y = player.centerY;
+}
+
 function draw() {
     background("darkblue");
     updatePlayerMovement();
     updatePlayerAppearance();
+    updateCamera();
     drawSprites();
 }
