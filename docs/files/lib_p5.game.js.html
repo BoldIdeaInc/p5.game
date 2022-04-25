@@ -2283,13 +2283,15 @@ function Sprite() {
   * @param {String} label Animation identifier
   */
   this.changeAnimation = function(label) {
-    if(!animations[label])
-      throw new Error(&#x27;changeAnimation error: no animation labeled &#x27;+label);
-    else
-    {
-      currentAnimation = label;
-      this.animation = animations[label];
+    if (!animations[label]) {
+      throw new Error(&#x60;changeAnimation error: no animation labeled ${label}&#x60;);
     }
+    if (label === this.getAnimationLabel()) {
+      // animation already selected
+      return;
+    }
+    currentAnimation = label;
+    this.animation = animations[label];
     this._internalWidth = this.animation.getWidth()*abs(this._getScaleX());
     this._internalHeight = this.animation.getHeight()*abs(this._getScaleY());
 
@@ -3772,93 +3774,84 @@ function Animation(pInst) {
     //print(&quot;sequence mode &quot;+from+&quot; -&gt; &quot;+to);
 
     //make sure the extensions are fine
-    var ext1 = from.substring(from.length-4, from.length);
-    if(ext1 !== &#x27;.png&#x27;)
-    {
-      pInst.print(&#x27;Animation error: you need to use .png files (filename &#x27;+from+&#x27;)&#x27;);
-      from = -1;
+    if (!from.match(/\.png$/)) {
+      throw new Error(&#x60;Animation error: you need to use .png files (filename ${from})&#x60;);
+    }
+    if (!to.match(/\.png$/)) {
+      throw new Error(&#x60;Animation error: you need to use .png files (filename ${to})&#x60;);
     }
 
-    var ext2 = to.substring(to.length-4, to.length);
-    if(ext2 !== &#x27;.png&#x27;)
-    {
-      pInst.print(&#x27;Animation error: you need to use .png files (filename &#x27;+to+&#x27;)&#x27;);
-      to = -1;
+    const match1 = from.match(new RegExp(&#x60;^(.*?)([0-9]+)\\.png&#x60;));
+    const match2 = to.match(new RegExp(&#x60;^(.*?)([0-9]+)\\.png&#x60;));
+
+    // Make sure filenames are in the right format
+    if (!match1 || !match2) {
+      throw new Error(&#x27;Animation error: when using two filenames, they must both have numbers in them, eg: &quot;animation01.png&quot;, &quot;animation10.png&quot;&#x27;);
+    }
+    const digits1 = match1[2].length;
+    const digits2 = match2[2].length;
+    const prefix1 = match1[1];
+    const prefix2 = match2[1];
+
+    // Our numbers likely have leading zeroes, which means that some
+    // browsers (e.g., PhantomJS) will interpret them as base 8 (octal)
+    // instead of decimal. To fix this, we&#x27;ll explicity tell parseInt to
+    // use a base of 10 (decimal). For more details on this issue, see
+    // http://stackoverflow.com/a/8763427/2422398.
+    var number1 = parseInt(match1[2], 10);
+    var number2 = parseInt(match2[2], 10);
+
+    if (isNaN(number1)) {
+      throw new Error(&#x60;Could not parse numbers from image filename: ${from}&#x60;);
+    }
+    if (isNaN(number2)) {
+      throw new Error(&#x60;Could not parse numbers from image filename: ${to}&#x60;);
     }
 
-    //extensions are fine
-    if(from !== -1 &amp;&amp; to !== -1)
+    //swap if inverted
+    if(number2&lt;number1)
     {
-      var digits1 = 0;
-      var digits2 = 0;
+      var t = number2;
+      number2 = number1;
+      number1 = t;
+    }
 
-      //skip extension work backwards to find the numbers
-      for (i = from.length-4; i &gt;= 0; i--) {
-        if(from.charAt(i) &gt;= &#x27;0&#x27; &amp;&amp; from.charAt(i) &lt;= &#x27;9&#x27;)
-          digits1++;
-      }
-
-      for (i = to.length-4; i &gt;= 0; i--) {
-        if(to.charAt(i) &gt;= &#x27;0&#x27; &amp;&amp; to.charAt(i) &lt;= &#x27;9&#x27;)
-          digits2++;
-      }
-
-      var prefix1 = from.substring(0, from.length-(4+digits1));
-      var prefix2 = to.substring(0, to.length-(4+digits2) );
-
-      // Our numbers likely have leading zeroes, which means that some
-      // browsers (e.g., PhantomJS) will interpret them as base 8 (octal)
-      // instead of decimal. To fix this, we&#x27;ll explicity tell parseInt to
-      // use a base of 10 (decimal). For more details on this issue, see
-      // http://stackoverflow.com/a/8763427/2422398.
-      var number1 = parseInt(from.substring(from.length-(4+digits1), from.length-4), 10);
-      var number2 = parseInt(to.substring(to.length-(4+digits2), to.length-4), 10);
-
-      //swap if inverted
-      if(number2&lt;number1)
+    //two different frames
+    if(prefix1 !== prefix2 )
+    {
+      //print(&quot;2 separate images&quot;);
+      this.images.push(pInst.loadImage(from));
+      this.images.push(pInst.loadImage(to));
+    }
+    //same digits: case img0001, img0002
+    else
+    {
+      var fileName;
+      if(digits1 === digits2)
       {
-        var t = number2;
-        number2 = number1;
-        number1 = t;
-      }
 
-      //two different frames
-      if(prefix1 !== prefix2 )
-      {
-        //print(&quot;2 separate images&quot;);
-        this.images.push(pInst.loadImage(from));
-        this.images.push(pInst.loadImage(to));
-      }
-      //same digits: case img0001, img0002
-      else
-      {
-        var fileName;
-        if(digits1 === digits2)
-        {
-
-          //load all images
-          for (i = number1; i &lt;= number2; i++) {
-            // Use nf() to number format &#x27;i&#x27; into four digits
-            fileName = prefix1 + pInst.nf(i, digits1) + &#x27;.png&#x27;;
-            this.images.push(pInst.loadImage(fileName));
-
-          }
+        //load all images
+        for (i = number1; i &lt;= number2; i++) {
+          // Use nf() to number format &#x27;i&#x27; into four digits
+          fileName = prefix1 + pInst.nf(i, digits1) + &#x27;.png&#x27;;
+          this.images.push(pInst.loadImage(fileName));
 
         }
-        else //case: case img1, img2
-        {
-          //print(&quot;from &quot;+prefix1+&quot; &quot;+number1 +&quot; to &quot;+number2);
-          for (i = number1; i &lt;= number2; i++) {
-            // Use nf() to number format &#x27;i&#x27; into four digits
-            fileName = prefix1 + i + &#x27;.png&#x27;;
-            this.images.push(pInst.loadImage(fileName));
 
-          }
+      }
+      else //case: case img1, img2
+      {
+        //print(&quot;from &quot;+prefix1+&quot; &quot;+number1 +&quot; to &quot;+number2);
+        for (i = number1; i &lt;= number2; i++) {
+          // Use nf() to number format &#x27;i&#x27; into four digits
+          fileName = prefix1 + i + &#x27;.png&#x27;;
+          this.images.push(pInst.loadImage(fileName));
 
         }
-      }
 
-    }//end no ext error
+      }
+    }
+
 
   }//end sequence mode
   // Sprite sheet mode
