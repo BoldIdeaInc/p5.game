@@ -1,5 +1,8 @@
 // Creating animations
 
+// This shows how to draw animations without using sprites. You can use this if you want something
+// animated that has no interaction (no collisions, movement, etc).
+
 var ghost, asterisk;
 
 // it's advisable (but not necessary) to load the images in the preload function
