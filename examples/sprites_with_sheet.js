@@ -1,17 +1,16 @@
-//Creating sprite using sprite sheets for animation
-var mouse_moved = false;
-var touch_started = false;
-var explode_sprite_sheet;
-var player_sprite_sheet;
-var tile_sprite_sheet;
-var explode_sprite;
-var player_walk;
-var player_stand;
-var player_sprite;
+// Creating sprite using sprite sheets for animation
+let mouse_moved = false;
+let touch_started = false;
+let explode_sprite_sheet;
+let player_sprite_sheet;
+let tile_sprite_sheet;
+let explode_sprite;
+let player_walk;
+let player_stand;
+let player_sprite;
 
-// Normally you would put this in a .json file, but I'm putting it here
-// for example purposes
-var player_frames = [
+// Normally you would put this in a .json file, but we're putting it here for example purposes
+let player_frames = [
   {'name':'player_walk01', 'frame':{'x':0, 'y': 0, 'width': 70, 'height': 94}},
   {'name':'player_walk02', 'frame':{'x':71, 'y': 0, 'width': 70, 'height': 94}},
   {'name':'player_walk03', 'frame':{'x':142, 'y': 0, 'width': 70, 'height': 94}},
@@ -65,11 +64,11 @@ function setup() {
   createCanvas(800, 400);
 
   // Create the exploding star sprite and add it's animation
-  explode_sprite = createSprite(width / 2, 100, 171, 158);
+  explode_sprite = createSprite(171, 158, width / 2, 100);
   explode_sprite.addAnimation('explode', explode_animation);
 
   // Create the Player sprite and add it's animations
-  player_sprite = createSprite(100, 284, 70, 94);
+  player_sprite = createSprite(70, 94, 100, 284);
   player_sprite.addAnimation('walk', player_walk);
   player_sprite.addAnimation('stand', player_stand);
 }
@@ -79,7 +78,7 @@ function draw() {
   background(0);
 
   // Draw the ground tiles
-  for (var x = 0; x < 840; x += 70) {
+  for (let x = 0; x < 840; x += 70) {
     tile_sprite_sheet.drawFrame('snow.png', x, 330);
   }
 
@@ -88,7 +87,7 @@ function draw() {
   tile_sprite_sheet.drawFrame('signRight.png', 0, 260);
 
   // Mobile friendly controls
-  var eventX;
+  let eventX;
   if (isTouch()) {
     eventX = touchX;
   } else {

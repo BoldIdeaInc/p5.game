@@ -1,6 +1,7 @@
 module.exports = {
   "env": {
-    "browser": true
+    "browser": true,
+    "es6": true
   },
   "extends": "eslint:recommended",
   "globals": {
@@ -15,7 +16,7 @@ module.exports = {
     ],
     "array-callback-return": "error",
     "arrow-body-style": "error",
-    "arrow-parens": "error",
+    "arrow-parens": "off",
     "arrow-spacing": "error",
     "block-scoped-var": "error",
     "block-spacing": ["error", "always"],
