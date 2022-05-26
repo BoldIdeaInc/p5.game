@@ -48,8 +48,8 @@ function draw() {
   background(255, 255, 255);
 
   // make the asterisk glide toward the mouse
-  asterisk.velocity.x = (mouseX-asterisk.position.x)/10;
-  asterisk.velocity.y = (mouseY-asterisk.position.y)/10;
+  asterisk.velocity.x = (mouseX-asterisk.x)/10;
+  asterisk.velocity.y = (mouseY-asterisk.y)/10;
 
   // Make asterisk collide against all the sprites in the group `obstacles`
   asterisk.collide(obstacles);

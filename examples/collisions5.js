@@ -20,7 +20,7 @@ let GRAVITY = 1;
 
 function preload() {
   triangleImage = loadImage('assets/triangle.png');
-  puffAnimation = loadAnimation('assets/puff_breathing0001.png', 'assets/puff_breathing0009.png');
+  puffAnimation = loadAnimation('assets/cloud_breathing0001.png', 'assets/cloud_breathing0009.png');
   puffAnimation2 = loadAnimation('assets/asterisk_normal0001.png', 'assets/asterisk_normal0003.png');
   platformImage = loadImage('assets/platform.png');
 }

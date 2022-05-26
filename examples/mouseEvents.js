@@ -67,8 +67,8 @@ function draw() {
   background(255, 255, 255);
 
   if (draggedSprite != null) {
-    draggedSprite.position.x = mouseX;
-    draggedSprite.position.y = mouseY;
+    draggedSprite.x = mouseX;
+    draggedSprite.y = mouseY;
   }
 
   // if a sprite is mouseActive true I can check if the mouse is over its

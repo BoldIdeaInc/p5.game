@@ -49,17 +49,17 @@ function draw() {
 
   for (var i=0; i<allSprites.length; i++) {
     var s = allSprites[i];
-    if (s.position.x<-MARGIN) {
-      s.position.x = width+MARGIN;
+    if (s.x<-MARGIN) {
+      s.x = width+MARGIN;
     }
-    if (s.position.x>width+MARGIN) {
-      s.position.x = -MARGIN;
+    if (s.x>width+MARGIN) {
+      s.x = -MARGIN;
     }
-    if (s.position.y<-MARGIN) {
-      s.position.y = height+MARGIN;
+    if (s.y<-MARGIN) {
+      s.y = height+MARGIN;
     }
-    if (s.position.y>height+MARGIN) {
-      s.position.y = -MARGIN;
+    if (s.y>height+MARGIN) {
+      s.y = -MARGIN;
     }
   }
 
@@ -81,7 +81,7 @@ function draw() {
   }
 
   if (keyWentDown('x')) {
-    var bullet = createSprite(bulletImage, ship.position.x, ship.position.y);
+    var bullet = createSprite(bulletImage, ship.x, ship.y);
     bullet.setVelocity(10+ship.getSpeed(), ship.rotation);
     bullet.life = 30;
     bullets.add(bullet);
@@ -116,12 +116,12 @@ function asteroidHit(asteroid, bullet) {
   var newType = asteroid.type-1;
 
   if (newType > 0) {
-    createAsteroid(newType, asteroid.position.x, asteroid.position.y);
-    createAsteroid(newType, asteroid.position.x, asteroid.position.y);
+    createAsteroid(newType, asteroid.x, asteroid.y);
+    createAsteroid(newType, asteroid.x, asteroid.y);
   }
 
   for (var i=0; i<10; i++) {
-    var p = createSprite(bulletImage, bullet.position.x, bullet.position.y);
+    var p = createSprite(bulletImage, bullet.x, bullet.y);
     p.addImage(particleImage);
     p.setVelocity(random(3, 5), random(360));
     p.friction = 0.05;

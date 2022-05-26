@@ -28,7 +28,7 @@ function draw() {
     cloud.visible = true;
   }
 
-  if (cloud.position.x > width) {
+  if (cloud.x > width) {
     cloud.x = 0;
   }
 

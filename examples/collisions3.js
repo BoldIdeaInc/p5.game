@@ -50,8 +50,8 @@ function draw() {
   background(255, 255, 255);
 
   // follow the mouse
-  circle.velocity.x = (mouseX-circle.position.x)/10;
-  circle.velocity.y = (mouseY-circle.position.y)/10;
+  circle.velocity.x = (mouseX-circle.x)/10;
+  circle.velocity.y = (mouseY-circle.y)/10;
 
   circle.collide(skizo);
   circle.collide(sun);
