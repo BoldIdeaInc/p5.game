@@ -6,43 +6,39 @@ var s2;
 
 function setup() {
   createCanvas(800, 400);
-  s1 = createSprite(width/2, height/2, 200, 200);
-  
+  s1 = createSprite(200, 200, width/2, height/2);
+
   s1.onMouseOver = function() {
-    this.rotation+=10;
+    this.rotation += 10;
   }
-  
-  s2 = createSprite(30, 30, 20, 20);
-  
+
+  s2 = createSprite(20, 20, 30, 30);
+
   s2.onMouseOver = function() {
-    this.rotation+=10;
+    this.rotation += 10;
   }
 }
 
 function draw() {
-  background("#FFFFFF");
-  
+  background('#FFFFFF');
+
   camera.position.x++;
-  
-  if(s1.mouseIsOver)
-    s1.shapeColor=color("#ff0000");
-  else
-    s1.shapeColor=color("#224477");
-  
+
+  if (s1.mouseIsOver) {
+    s1.shapeColor=color('#ff0000');
+  } else {
+    s1.shapeColor=color('#224477');
+  }
+
   drawSprite(s1);
-  
+
+  if(s2.mouseIsOver) {
+    s2.shapeColor=color('#ff0000');
+  } else {
+    s2.shapeColor=color('#224477');
+  }
+
+  // when camera is off, anything drawn will be drawn in the screen space (like a UI)
   camera.off();
-  
-  //camera is off - this sprite is drawn in the screen space like a UI
-  
-  if(s2.mouseIsOver)
-    s2.shapeColor=color("#ff0000");
-  else
-    s2.shapeColor=color("#224477");
-  
   drawSprite(s2);
-
 }
-
-
-
