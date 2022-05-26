@@ -85,6 +85,11 @@ function updatePlayerMovement() {
   It's important to update horizontal position and collision-checking
   BEFORE updating vertical movement. Otherwise the sprite will get "stuck"
   inside the platform.
+
+  Note that we're not using modifying `player.velocity.x` or
+  `player.velocity.y`. We need fine-tuned control over *when* we update the
+  player's position, so we use our own custom properties called
+  `horizontalSpeed` and `verticalSpeed`
   */
 
   // Step 1: Update horizontal/vertical speed when control keys are pressed

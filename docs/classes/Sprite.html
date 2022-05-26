@@ -112,7 +112,6 @@ collisions or overlappings with other sprites and mouse interactions.</p>
 				<li class=""><a href="#method-addImage"><span class="im">addImage</span>(<span class="ia">label</span><span class="ia">img</span>)</a></li>
 				<li class=""><a href="#method-addToGroup"><span class="im">addToGroup</span>(<span class="ia">group</span>)</a></li>
 				<li class=""><a href="#method-addVelocity"><span class="im">addVelocity</span>(<span class="ia">speed</span><span class="ia">angle</span>)</a></li>
-				<li class=""><a href="#method-attractionPoint"><span class="im">attractionPoint</span>(<span class="ia">magnitude</span><span class="ia">pointX</span><span class="ia">pointY</span>)</a></li>
 				<li class=""><a href="#method-bounce"><span class="im">bounce</span>(<span class="ia">target</span><span class="ia">callback</span>)</a></li>
 				<li class=""><a href="#method-changeAnimation"><span class="im">changeAnimation</span>(<span class="ia">label</span>)</a></li>
 				<li class=""><a href="#method-changeImage"><span class="im">changeImage</span>(<span class="ia">label</span>)</a></li>
@@ -123,6 +122,8 @@ collisions or overlappings with other sprites and mouse interactions.</p>
 				<li class=""><a href="#method-getAnimationLabel"><span class="im">getAnimationLabel</span>()</a></li>
 				<li class=""><a href="#method-getBoundingBox"><span class="im">getBoundingBox</span>()</a></li>
 				<li class=""><a href="#method-getDirection"><span class="im">getDirection</span>()</a></li>
+				<li class=""><a href="#method-getDirectionTo"><span class="im">getDirectionTo</span>(<span class="ia">pointX</span><span class="ia">pointY</span>)</a></li>
+				<li class=""><a href="#method-getDistanceTo"><span class="im">getDistanceTo</span>(<span class="ia">pointX</span><span class="ia">pointY</span>)</a></li>
 				<li class=""><a href="#method-getSpeed"><span class="im">getSpeed</span>()</a></li>
 				<li class=""><a href="#method-isTouching"><span class="im">isTouching</span>(<span class="ia">target</span>)</a></li>
 				<li class=""><a href="#method-limitSpeed"><span class="im">limitSpeed</span>(<span class="ia">max</span>)</a></li>
@@ -222,7 +223,7 @@ collisions or overlappings with other sprites and mouse interactions.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.game.js.html#l2214"><code>lib&#x2F;p5.game.js:2214</code></a>
+		<a href="../files/lib_p5.game.js.html#l2234"><code>lib&#x2F;p5.game.js:2234</code></a>
 		</p>
 
 
@@ -297,7 +298,7 @@ until Sprite.changeAnimation(label) is called.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.game.js.html#l2186"><code>lib&#x2F;p5.game.js:2186</code></a>
+		<a href="../files/lib_p5.game.js.html#l2206"><code>lib&#x2F;p5.game.js:2206</code></a>
 		</p>
 
 
@@ -455,80 +456,6 @@ The force is added to the current velocity.</p>
 
 
 </div>
-<div id="method-attractionPoint" class="method item ">
-	<div class="method-signature">
-	<span class="name"><code>attractionPoint</code></span>
-
-		<div class="args">
-			<span class="paren">(</span><ul class="args-list inline commas">
-				<li class="arg">
-						<code>magnitude</code>
-				</li>
-				<li class="arg">
-						<code>pointX</code>
-				</li>
-				<li class="arg">
-						<code>pointY</code>
-				</li>
-			</ul><span class="paren">)</span>
-		</div>
-	</div>
-
-
-
-
-
-
-	<div class="meta">
-				<p>
-				Defined in
-		<a href="../files/lib_p5.game.js.html#l2170"><code>lib&#x2F;p5.game.js:2170</code></a>
-		</p>
-
-
-
-	</div>
-
-	<div class="description"><p>Pushes the sprite toward a point.
-The force is added to the current velocity.</p>
-</div>
-
-		<div class="params">
-			<h4>Parameters:</h4>
-
-			<ul class="params-list">
-				<li class="param">
-						<code class="param-name">magnitude</code>
-						<span class="type">Number</span>
-
-
-					<div class="param-description"><p>Scalar speed to add</p>
-</div>
-
-				</li>
-				<li class="param">
-						<code class="param-name">pointX</code>
-						<span class="type">Number</span>
-
-
-					<div class="param-description"><p>Direction x coordinate</p>
-</div>
-
-				</li>
-				<li class="param">
-						<code class="param-name">pointY</code>
-						<span class="type">Number</span>
-
-
-					<div class="param-description"><p>Direction y coordinate</p>
-</div>
-
-				</li>
-			</ul>
-		</div>
-
-
-</div>
 <div id="method-bounce" class="method item ">
 	<div class="method-signature">
 	<span class="name"><code>bounce</code></span>
@@ -556,7 +483,7 @@ The force is added to the current velocity.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.game.js.html#l2499"><code>lib&#x2F;p5.game.js:2499</code></a>
+		<a href="../files/lib_p5.game.js.html#l2519"><code>lib&#x2F;p5.game.js:2519</code></a>
 		</p>
 
 
@@ -646,7 +573,7 @@ function explosion(spriteA, spriteB) {
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.game.js.html#l2298"><code>lib&#x2F;p5.game.js:2298</code></a>
+		<a href="../files/lib_p5.game.js.html#l2318"><code>lib&#x2F;p5.game.js:2318</code></a>
 		</p>
 
 
@@ -696,7 +623,7 @@ See Animation for more control over the sequence.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.game.js.html#l2277"><code>lib&#x2F;p5.game.js:2277</code></a>
+		<a href="../files/lib_p5.game.js.html#l2297"><code>lib&#x2F;p5.game.js:2297</code></a>
 		</p>
 
 
@@ -752,7 +679,7 @@ Equivalent to changeAnimation</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.game.js.html#l2436"><code>lib&#x2F;p5.game.js:2436</code></a>
+		<a href="../files/lib_p5.game.js.html#l2456"><code>lib&#x2F;p5.game.js:2456</code></a>
 		</p>
 
 
@@ -848,7 +775,7 @@ function explosion(spriteA, spriteB) {
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.game.js.html#l2468"><code>lib&#x2F;p5.game.js:2468</code></a>
+		<a href="../files/lib_p5.game.js.html#l2488"><code>lib&#x2F;p5.game.js:2488</code></a>
 		</p>
 
 
@@ -999,7 +926,7 @@ Will display the sprite as circle.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.game.js.html#l2288"><code>lib&#x2F;p5.game.js:2288</code></a>
+		<a href="../files/lib_p5.game.js.html#l2308"><code>lib&#x2F;p5.game.js:2308</code></a>
 		</p>
 
 
@@ -1089,6 +1016,172 @@ Will display the sprite as circle.</p>
 		</div>
 
 </div>
+<div id="method-getDirectionTo" class="method item ">
+	<div class="method-signature">
+	<span class="name"><code>getDirectionTo</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>pointX</code>
+				</li>
+				<li class="arg">
+						<code>pointY</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type">Number</span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/lib_p5.game.js.html#l2170"><code>lib&#x2F;p5.game.js:2170</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Get the angle between this sprite and another point.
+This can be used to rotate or move a sprite toward that point.</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">pointX</code>
+						<span class="type">Number</span>
+
+
+					<div class="param-description"><p>point x coordinite</p>
+</div>
+
+				</li>
+				<li class="param">
+						<code class="param-name">pointY</code>
+						<span class="type">Number</span>
+
+
+					<div class="param-description"><p>point y coordinate</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type">Number</span>:
+					<p>direction in degrees</p>
+
+			</div>
+		</div>
+
+		<div class="example">
+			<h4>Example:</h4>
+
+			<div class="example-content">
+				<pre class="code prettyprint"><code># Moves the sprite toward the mouse cursor
+let speed = 10;
+let direction = mySprite.getDirectionTo(mouseX, mouseY);
+mySprite.setVelocity(speed, direction);</code></pre>
+
+			</div>
+		</div>
+</div>
+<div id="method-getDistanceTo" class="method item ">
+	<div class="method-signature">
+	<span class="name"><code>getDistanceTo</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>pointX</code>
+				</li>
+				<li class="arg">
+						<code>pointY</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type">Number</span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/lib_p5.game.js.html#l2190"><code>lib&#x2F;p5.game.js:2190</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Get the distance between this sprite and another point.</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">pointX</code>
+						<span class="type">Number</span>
+
+
+					<div class="param-description"><p>point x coordinite</p>
+</div>
+
+				</li>
+				<li class="param">
+						<code class="param-name">pointY</code>
+						<span class="type">Number</span>
+
+
+					<div class="param-description"><p>point y coordinate</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type">Number</span>:
+					<p>distance in pixels</p>
+
+			</div>
+		</div>
+
+		<div class="example">
+			<h4>Example:</h4>
+
+			<div class="example-content">
+				<pre class="code prettyprint"><code>var distanceToMouse = mySprite.getDistanceTo(mouseX, mouseY);</code></pre>
+
+			</div>
+		</div>
+</div>
 <div id="method-getSpeed" class="method item ">
 	<div class="method-signature">
 	<span class="name"><code>getSpeed</code></span>
@@ -1153,7 +1246,7 @@ Will display the sprite as circle.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.game.js.html#l2419"><code>lib&#x2F;p5.game.js:2419</code></a>
+		<a href="../files/lib_p5.game.js.html#l2439"><code>lib&#x2F;p5.game.js:2439</code></a>
 		</p>
 
 
@@ -1434,7 +1527,7 @@ onMouseOver, onMouseOut, onMousePressed, onMouseReleased</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.game.js.html#l2390"><code>lib&#x2F;p5.game.js:2390</code></a>
+		<a href="../files/lib_p5.game.js.html#l2410"><code>lib&#x2F;p5.game.js:2410</code></a>
 		</p>
 
 
@@ -1528,7 +1621,7 @@ function explosion(spriteA, spriteB) {
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.game.js.html#l2322"><code>lib&#x2F;p5.game.js:2322</code></a>
+		<a href="../files/lib_p5.game.js.html#l2342"><code>lib&#x2F;p5.game.js:2342</code></a>
 		</p>
 
 
@@ -1603,7 +1696,7 @@ against only the visible part of the sprite.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.game.js.html#l2357"><code>lib&#x2F;p5.game.js:2357</code></a>
+		<a href="../files/lib_p5.game.js.html#l2377"><code>lib&#x2F;p5.game.js:2377</code></a>
 		</p>
 
 

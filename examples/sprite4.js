@@ -12,10 +12,11 @@ function preload() {
 
 function setup() {
   createCanvas(800, 400);
+  //angleMode(DEGREES);
 
   //create the sprites
-  ghost = createSprite(ghostAnimation, 600, 200);
   circle = createSprite(circleAnimation, 400, 200);
+  ghost = createSprite(ghostAnimation, 600, 200);
 }
 
 function draw() {
@@ -27,16 +28,32 @@ function draw() {
   circle.setSpeed(3);
   circle.setDirection(direction);
 
-  // you can rotate the sprite according the direction it is moving uncomment this:
-  //circle.rotateToDirection = true;
+  // You can also set both at once using setVelocity():
+  // circle.setVelocity(3, direction);
 
-  // You can also apply a force on the sprite toward a point
-  ghost.attractionPoint(0.2, mouseX, mouseY);
+  // You can rotate the sprite according its direction:
+  circle.rotateToDirection = true;
 
-  // since the force keeps incrementing the speed you can
-  // set a limit to it with maxSpeed
-  ghost.maxSpeed = 5;
+  // here we increase the ghost speed each frame, but limit it to 10
+  var currentGhostSpeed = ghost.getSpeed();
+  if (currentGhostSpeed < 20) {
+    ghost.setSpeed(currentGhostSpeed + 2);
+  }
 
-  //draw the sprite
+  // We then set the ghost to move in the direction of the mouse pointer
+  var directionToPointer = ghost.getDirectionTo(mouseX, mouseY);
+  ghost.setDirection(directionToPointer);
+
+  // Note: you can only set the direction of a sprite if the sprite has a speed greater than 0.
+
+  // if we get within 5 pixels of the mouse, position the sprite exactly on the pointer and stop.
+  var distanceToPointer = ghost.getDistanceTo(mouseX, mouseY);
+  if (distanceToPointer < 10) {
+    ghost.x = mouseX;
+    ghost.y = mouseY;
+    ghost.setSpeed(0);
+  }
+
+  // draw all sprites
   drawSprites();
 }

@@ -95,14 +95,14 @@ function draw() {
   }
 
   //if mouse is to the left
-  if(eventX < player_sprite.position.x - 10) {
+  if(eventX < player_sprite.x - 10) {
     player_sprite.changeAnimation('walk');
     // flip horizontally
     player_sprite.mirrorX(-1);
     // move left
     player_sprite.velocity.x = -2;
   }
-  else if(eventX > player_sprite.position.x + 10) {
+  else if(eventX > player_sprite.x + 10) {
     player_sprite.changeAnimation('walk');
     // flip horizontally
     player_sprite.mirrorX(1);
